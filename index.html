@@ -90,7 +90,7 @@
     .meta { display: flex; justify-content: space-between; align-items: center; color: var(--sub); font-size: 14px; margin-bottom: 10px }
     .meta .num { font-weight: 700; color: var(--ink) }
     /* ---- モード選択（最初の画面） ---- */
-    .mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px }
+    .mode-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px }
     .mode-card { display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 18px 18px 16px; border-radius: 14px }
     .mode-card b { font-size: 19px; color: var(--accent) }
     .mode-card span { color: var(--sub); font-size: 14px; line-height: 1.6 }
@@ -310,16 +310,21 @@
         { v: -1, label: 'いいえ', key: '3' },
       ];
       const params = new URLSearchParams(location.search);
-      // モード（最初の画面で選ぶ。?mode=fast / ?mode=relaxed で最初の画面を飛ばせる）
+      // モード（最初の画面で選ぶ。?mode=fast / normal / relaxed で最初の画面を飛ばせる）
+      //   最速モード  : 3択・全部正しく答える前提。座席数・都道府県・チェーン名などあらゆる質問を使って最短で当てる
+      //   通常モード  : 3択・全部正しく答える前提。座席数・都道府県は極力聞かない
+      //   じっくりモード: 5段階・答え間違いOK。座席数・都道府県は極力聞かない
+      //   「極力聞かない」＝ほかの質問で絞りきれないとき／「わからない」が多いときだけ聞く
       //   最速モード  : 3択・全部正しく答える前提。チェーン名・都道府県は聞かない
       //   じっくりモード: 5段階・答え間違いOK。チェーン名・都道府県は
       //                   設備などで絞りきれないとき／「わからない」が多いときだけ聞く
       const MODES = {
         fast: { name: '最速モード' },
+        normal: { name: '通常モード' },
         relaxed: { name: 'じっくりモード' },
       };
       let mode = MODES[params.get('mode')] ? params.get('mode') : null;
-      let fast = true, relaxed = false;
+      let fast = true, relaxed = false, exact = true;
       let ANSWERS = ANSWERS_FAST;
       // 方針：
       //  ・回答と食い違った館は、質問の答えやすさ（tier）に応じて重みを下げる。
@@ -333,16 +338,18 @@
       const MISS = { A: 0.002, B: 0.05, C: 0.2, D: 0.15 };    // はい/いいえ と食い違ったときの重み
       const WEAK_MISS = { A: 0.3, B: 0.4, C: 0.6, D: 0.6 };   // たぶん〜 と食い違ったときの重み
       const PRIORITY = { region: 0.8, facility: 1, number: 1.3, chain: 0.2, pref: 0.2, fine: 0.1 };
-      // true にするとチェーン名・都道府県を一切聞かない
-      let noChainPref = true;
-      // じっくりモードで「わからない」がこの数以上になったら、チェーン名・都道府県も聞く
+      // 通常・じっくりモードで「極力聞かない」質問：座席数（総座席・最大スクリーンの席数）と都道府県
+      const isAvoided = q => q.kind === 'pref' || /^(st|stD|mx|mxD):/.test(q.id);
+      let avoid = false;   // true の間は isAvoided の質問を候補にしない
+      // 「わからない」がこの数以上になったら、避けていた質問も聞く
       const UNKNOWN_LIMIT = 3;
       function setMode(m) {
         mode = m;
         fast = m === 'fast';
         relaxed = m === 'relaxed';
-        noChainPref = m === 'fast';
-        ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL;
+        exact = m !== 'relaxed';        // 最速・通常は全部正しく答える前提（食い違った館は即除外）
+        avoid = m !== 'fast';
+        ANSWERS = exact ? ANSWERS_FAST : ANSWERS_FULL;
       }
       if (mode) setMode(mode);
       const PRUNE = 0.02, CONFIDENT = 0.97;
@@ -350,7 +357,7 @@
       function likelihood(val, a, tier) {
         if (val === null || a === 0) return 1;
         if ((val ? 1 : -1) * a > 0) return 1;
-        if (fast) return 0;
+        if (exact) return 0;
         return Math.abs(a) === 1 ? MISS[tier] : WEAK_MISS[tier];
       }
 
@@ -379,7 +386,8 @@
 
       // 有力候補を分けられる質問のうち「期待情報量 × 答えやすさ」が最大のものを選ぶ。
       // allowChainPref: チェーン名・都道府県の質問も候補にするか
-      function bestQuestion(w, allowChainPref = !noChainPref) {
+      // useAvoided: 座席数・都道府県の質問も候補にするか
+      function bestQuestion(w, useAvoided = !avoid) {
         // 同じ文面の質問（C と D の同じ閾値、地方と県の「北海道」など）は二度聞かない
         const asked = new Set(state.history.map(h => Q[h.q].text));
         const idx = []; for (let i = 0; i < w.length; i++) if (w[i] > 0) idx.push(i);
@@ -387,8 +395,8 @@
         let best = -1, bestScore = 1e-9;
         Q.forEach((q, qi) => {
           if (asked.has(q.text)) return;
-          const isCP = q.kind === 'chain' || q.kind === 'pref';
-          if (isCP && (noChainPref || !allowChainPref)) return;
+          const av = isAvoided(q);
+          if (av && !useAvoided) return;
           const vals = idx.map(i => q.test(T[i]));
           if (!vals.includes(true) || !vals.includes(false)) return;   // 候補を分けられない
           let mass = 0, exp = 0;
@@ -397,9 +405,9 @@
             const s = nw.reduce((x, y) => x + y, 0);
             exp += s * entropy(nw.map(x => x / s)); mass += s;
           }
-          // スピードモードは答えやすさを気にせず、いちばん絞り込める質問を選ぶ
-          // じっくりモードでチェーン名・都道府県を聞く段階では、それを優先する
-          const pri = fast ? 1 : (relaxed && isCP) ? 1.5 : PRIORITY[q.kind];
+          // 最速モードは答えやすさを気にせず、いちばん絞り込める質問を選ぶ
+          // 通常・じっくりは答えやすい質問を優先。避けていた質問を解禁した段階ではそれを優先する
+          const pri = fast ? 1 : (avoid && av) ? 1.5 : PRIORITY[q.kind];
           const score = (e0 - exp / mass) * pri;
           if (score > bestScore) { bestScore = score; best = qi; }
         });
@@ -413,22 +421,24 @@
       // 次に聞く質問の番号を返す。-1 なら当てにいく
       function decide(w, top, n) {
         if (n >= 30) return -1;
-        // スピードモード：矛盾のない館が1つになる（＝分けられる質問がない）まで聞く
-        if (fast) return bestQuestion(w);
-        let qi = top.p < CONFIDENT ? bestQuestion(w, !relaxed && !noChainPref) : -1;
-        // じっくりモード：設備などでは絞りきれない（もう分けられない／細かい数値しか残っていない）、
-        // または「わからない」が多いときだけ、チェーン名・都道府県も聞く
-        if (relaxed && top.p < CONFIDENT) {
-          const unknowns = state.history.filter(h => h.a === 0).length;
-          if (qi < 0 || Q[qi].kind === 'fine' || unknowns >= UNKNOWN_LIMIT) {
-            const q2 = bestQuestion(w, true);
-            if (q2 >= 0) qi = q2;
-          }
+        // 最速モード：あらゆる質問を使い、矛盾のない館が1つになるまで聞く
+        if (fast) return bestQuestion(w, true);
+        const unknowns = state.history.filter(h => h.a === 0).length;
+        // ほかの質問で絞りきれない（分けられない／細かい数値しか残っていない）、
+        // または「わからない」が多いときだけ、座席数・都道府県も聞く
+        const fallback = qi => qi < 0 || Q[qi].kind === 'fine' || unknowns >= UNKNOWN_LIMIT;
+        // 通常モード：正しく答える前提なので、矛盾のない館が1つになるまで聞く
+        if (!relaxed) {
+          let qi = bestQuestion(w, false);
+          if (fallback(qi)) { const q2 = bestQuestion(w, true); if (q2 >= 0) qi = q2; }
+          return qi;
         }
+        // じっくりモード：トップが十分抜けるまで聞く
+        let qi = top.p < CONFIDENT ? bestQuestion(w, false) : -1;
+        if (top.p < CONFIDENT && fallback(qi)) { const q2 = bestQuestion(w, true); if (q2 >= 0) qi = q2; }
         // 細かい数値（D）でしか分けられない段階では、答えが曖昧になりがちなので
         // ある程度抜けていれば当てにいき、外れたら次の候補へ（延々と数字を聞き続けない）
         if (qi >= 0 && Q[qi].kind === 'fine' && (top.p >= 0.75 || n >= 25)) qi = -1;
-        // トップが十分抜けた or もう候補を分けられる質問がない時だけ当てにいく
         return qi;
       }
 
@@ -519,10 +529,13 @@
       <div class="mode-cards">
         <button class="mode-card" data-m="fast"><b>最速モード</b>
           <span>できるだけ少ない質問で当てます。</span>
-          <ul><li>はい・わからない・いいえの3択</li><li>全部正しく答える前提</li><li>チェーン名・都道府県は聞きません</li></ul></button>
+          <ul><li>はい・わからない・いいえの3択</li><li>全部正しく答える前提</li><li>座席数・都道府県・チェーン名など、あらゆる質問を使います</li></ul></button>
+        <button class="mode-card" data-m="normal"><b>通常モード</b>
+          <span>答えやすい質問を中心に当てます。</span>
+          <ul><li>はい・わからない・いいえの3択</li><li>全部正しく答える前提</li><li>座席数・都道府県は、絞りきれないときだけ聞きます</li></ul></button>
         <button class="mode-card" data-m="relaxed"><b>じっくりモード</b>
           <span>あいまいな答えや多少の間違いがあっても当てにいきます。</span>
-          <ul><li>「たぶんそう」なども選べる5段階</li><li>答え間違いがあっても大丈夫</li><li>絞りきれないときや「わからない」が多いときだけ、チェーン名・都道府県を聞きます</li></ul></button>
+          <ul><li>「たぶんそう」なども選べる5段階</li><li>答え間違いがあっても大丈夫</li><li>座席数・都道府県は、絞りきれないときだけ聞きます</li></ul></button>
       </div>
     </div>`;
         stage.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { setMode(b.dataset.m); reset(); });
