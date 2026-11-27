@@ -179,7 +179,8 @@
         '九州・沖縄地方': ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県'],
       };
       const FORMATS = ['IMAX', 'Dolby Cinema', 'Dolby Atmos', '4DX', 'MX4D', 'ScreenX', 'D-BOX', 'TCX', 'ULTIRA', 'BESTIA', 'SAION', 'DTS:X', '轟音シアター', '重震シアター', 'プレミアムシアター'];
-      const FORMAT_LABEL = { 'Dolby Cinema': 'ドルビーシネマ', 'Dolby Atmos': 'ドルビーアトモス' };
+      // シネマサンシャイン三郷の「BESTIA IN Dolby Vision+Atmos」もドルビーシネマとして扱う
+      const FORMAT_LABEL = { 'Dolby Cinema': 'ドルビーシネマ（Dolby Vision＋Atmosのスクリーンも含む）', 'Dolby Atmos': 'ドルビーアトモス' };
 
       // 各質問の属性
       //   kind : 質問の種類。PRIORITY で聞く順番の優先度を決める

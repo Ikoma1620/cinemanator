@@ -6,8 +6,12 @@ import glob, json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.dirname(HERE)
 
+# 対象の8チェーン（フォルダにある他のチェーンのデータは使わない）
+CHAINS = ["109シネマズ", "TOHOシネマズ", "T・ジョイ", "イオンシネマ", "コロナシネマワールド",
+          "シネマサンシャイン", "ユナイテッド・シネマ", "松竹MOVIX（SMT）"]
+
 out = []
-for path in sorted(glob.glob(os.path.join(SRC, "スクリーン情報_*.json"))):
+for path in [os.path.join(SRC, f"スクリーン情報_{c}.json") for c in CHAINS]:
     d = json.load(open(path, encoding="utf-8"))
     chain = d["chain"]["name"]
     for t in d["theaters"]:
