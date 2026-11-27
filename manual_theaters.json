@@ -1861,55 +1861,55 @@
    "prefecture": "静岡県",
    "url": "http://www.cineprego.jp/fecp_page06.html",
    "source": "公式",
-   "note": "",
+   "note": "座席数は公式の「84＋1」の＋の前、車椅子は＋の後ろ",
    "screens": [
     {
      "name": "SCREEN1",
      "seats": 84,
      "width": 7.07,
-     "wheelchair": null,
+     "wheelchair": 1,
      "formats": []
     },
     {
      "name": "SCREEN2",
      "seats": 84,
      "width": 7.07,
-     "wheelchair": null,
+     "wheelchair": 1,
      "formats": []
     },
     {
      "name": "SCREEN3",
      "seats": 106,
      "width": 8.17,
-     "wheelchair": null,
+     "wheelchair": 1,
      "formats": []
     },
     {
      "name": "SCREEN4",
      "seats": 115,
      "width": 8.1,
-     "wheelchair": null,
+     "wheelchair": 1,
      "formats": []
     },
     {
      "name": "SCREEN5",
      "seats": 84,
      "width": 7.0,
-     "wheelchair": null,
+     "wheelchair": 1,
      "formats": []
     },
     {
      "name": "SCREEN6",
      "seats": 150,
      "width": 9.2,
-     "wheelchair": null,
+     "wheelchair": 2,
      "formats": []
     },
     {
      "name": "SCREEN7",
      "seats": 266,
      "width": 15.44,
-     "wheelchair": null,
+     "wheelchair": 2,
      "formats": []
     }
    ]

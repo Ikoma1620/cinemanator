@@ -420,8 +420,8 @@
       function factsHTML(t) {
         return `<div class="facts">
       <div><b>${t.sc ?? '—'}</b><span>スクリーン</span></div>
-      <div><b>${t.st ? t.st.toLocaleString() : '—'}</b><span>総座席</span></div>
-      <div><b>${t.mx ?? '—'}</b><span>最大スクリーン席数</span></div>
+      <div><b>${t.st ? t.st.toLocaleString() : '—'}</b><span>総座席（車椅子席を含む）</span></div>
+      <div><b>${t.mx ?? '—'}</b><span>最大スクリーンの席数（車椅子席を含む）</span></div>
     </div>
     ${t.f.length ? `<div class="tags">${t.f.map(f => `<span>${esc(f)}</span>`).join('')}</div>` : ''}`;
       }

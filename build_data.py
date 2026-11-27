@@ -15,7 +15,9 @@ fixes = manual["fixes"]
 
 def entry(name, chain, pref, url, screens, formats, special=None):
     """screens: [{"seats", "wheelchair", "width", "formats"}]"""
-    seats = [s["seats"] for s in screens if isinstance(s.get("seats"), (int, float)) and s["seats"] > 0]
+    # 座席数は車椅子スペースを含めた数にする（車椅子の数が不明なスクリーンは座席数のみ）
+    seats = [s["seats"] + (s.get("wheelchair") or 0) for s in screens
+             if isinstance(s.get("seats"), (int, float)) and s["seats"] > 0]
     widths = [s["width"] for s in screens if s.get("width")]
     wcs = [s.get("wheelchair") for s in screens]
     return {
