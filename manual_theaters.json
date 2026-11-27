@@ -144,7 +144,7 @@
   },
   {
    "chain": "ユナイテッド・シネマ",
-   "theaterName": "ユナイテッド・シネマ アクアシティお台場",
+   "theaterName": "ユナイテッド・シネマ お台場",
    "prefecture": "東京都",
    "url": "https://www.unitedcinemas.jp/odaiba/about_facilities.html",
    "source": "公式",
@@ -316,7 +316,7 @@
   },
   {
    "chain": "ユナイテッド・シネマ",
-   "theaterName": "ユナイテッド・シネマ 岡崎",
+   "theaterName": "ローソン・ユナイテッドシネマ 岡崎",
    "prefecture": "愛知県",
    "url": "https://www.unitedcinemas.jp/okazaki/about_facilities.html",
    "source": "公式",
@@ -391,7 +391,7 @@
   },
   {
    "chain": "ユナイテッド・シネマ",
-   "theaterName": "ユナイテッド・シネマ 小倉",
+   "theaterName": "ローソン・ユナイテッドシネマ 小倉",
    "prefecture": "福岡県",
    "url": "https://www.unitedcinemas.jp/kokura/about_facilities.html",
    "source": "公式",
@@ -2124,6 +2124,45 @@
  ],
  "fixes": {
   "rename": {
+   "https://www.unitedcinemas.jp/sapporo/about_facilities.html": "ローソン・ユナイテッドシネマ 札幌",
+   "https://www.unitedcinemas.jp/asahikawa/about_facilities.html": "シネプレックス旭川",
+   "https://www.unitedcinemas.jp/ogawara/about_facilities.html": "ユナイテッド・シネマ フォルテ宮城大河原",
+   "https://www.unitedcinemas.jp/ashikaga/about_facilities.html": "ユナイテッド・シネマ アシコタウンあしかが",
+   "https://www.unitedcinemas.jp/maebashi/about_facilities.html": "ローソン・ユナイテッドシネマ 前橋",
+   "https://www.unitedcinemas.jp/urawa/about_facilities.html": "ユナイテッド・シネマ 浦和",
+   "https://www.unitedcinemas.jp/minamifuruya/about_facilities.html": "ユナイテッド・シネマ 南古谷",
+   "https://www.unitedcinemas.jp/chichibu/about_facilities.html": "ユナイテッド・シネマ ウニクス秩父",
+   "https://www.unitedcinemas.jp/kasukabe/about_facilities.html": "ユナイテッド・シネマ 春日部",
+   "https://www.unitedcinemas.jp/iruma/about_facilities.html": "ローソン・ユナイテッドシネマ 入間",
+   "https://www.unitedcinemas.jp/niza/about_facilities.html": "ユナイテッド・シネマ 新座",
+   "https://www.unitedcinemas.jp/satte/about_facilities.html": "シネプレックス幸手",
+   "https://www.unitedcinemas.jp/kamisato/about_facilities.html": "ユナイテッド・シネマ 上里",
+   "https://www.unitedcinemas.jp/makuhari/about_facilities.html": "ユナイテッド・シネマ 幕張",
+   "https://www.unitedcinemas.jp/matsudo/about_facilities.html": "ユナイテッド・シネマ テラスモール松戸",
+   "https://www.unitedcinemas.jp/toyosu/about_facilities.html": "ユナイテッド・シネマ 豊洲",
+   "https://www.unitedcinemas.jp/ygc/about_facilities.html": "恵比寿ガーデンシネマ",
+   "https://www.unitedcinemas.jp/toshimaen/about_facilities.html": "ユナイテッド・シネマ としまえん",
+   "https://www.unitedcinemas.jp/minatomirai/about_facilities.html": "ローソン・ユナイテッドシネマ みなとみらい",
+   "https://www.unitedcinemas.jp/niigata/about_facilities.html": "ユナイテッド・シネマ 新潟",
+   "https://www.unitedcinemas.jp/kanazawa/about_facilities.html": "ユナイテッド・シネマ 金沢",
+   "https://www.unitedcinemas.jp/toyohashi/about_facilities.html": "ユナイテッド・シネマ 豊橋18",
+   "https://www.unitedcinemas.jp/inazawa/about_facilities.html": "ユナイテッド・シネマ 稲沢",
+   "https://www.unitedcinemas.jp/agui/about_facilities.html": "ユナイテッド・シネマ 阿久比",
+   "https://www.unitedcinemas.jp/otsu/about_facilities.html": "ユナイテッド・シネマ 大津",
+   "https://www.unitedcinemas.jp/kishiwada/about_facilities.html": "ローソン・ユナイテッドシネマ 岸和田",
+   "https://www.unitedcinemas.jp/kashihara/about_facilities.html": "ユナイテッド・シネマ 橿原",
+   "https://www.unitedcinemas.jp/canalcity/about_facilities.html": "ユナイテッド・シネマ キャナルシティ13",
+   "https://www.unitedcinemas.jp/fukuokamomochi/about_facilities.html": "ユナイテッド・シネマ 福岡ももち",
+   "https://www.unitedcinemas.jp/nakama/about_facilities.html": "ユナイテッド・シネマ なかま16",
+   "https://www.unitedcinemas.jp/hisayama/about_facilities.html": "ユナイテッド・シネマ トリアス久山",
+   "https://www.unitedcinemas.jp/nagasaki/about_facilities.html": "ローソン・ユナイテッドシネマ 長崎",
+   "https://www.unitedcinemas.jp/urasoe/about_facilities.html": "ローソン・ユナイテッドシネマ PARCO CITY 浦添",
+   "https://www.unitedcinemas.jp/mito/about_facilities.html": "ユナイテッド・シネマ 水戸",
+   "https://www.unitedcinemas.jp/wakaba/about_facilities.html": "ユナイテッド・シネマ わかば",
+   "https://www.unitedcinemas.jp/odaiba/about_facilities.html": "ユナイテッド・シネマ お台場",
+   "https://www.unitedcinemas.jp/hiratsuka/about_facilities.html": "シネプレックス平塚",
+   "https://www.unitedcinemas.jp/okazaki/about_facilities.html": "ローソン・ユナイテッドシネマ 岡崎",
+   "https://www.unitedcinemas.jp/kokura/about_facilities.html": "ローソン・ユナイテッドシネマ 小倉",
    "https://startheaters.jp/theaters/2/floor-guide/": "シネマライカム",
    "https://startheaters.jp/theaters/3/floor-guide/": "ミハマ7プレックス",
    "https://startheaters.jp/theaters/5/floor-guide/": "シネマパレット",
@@ -2135,6 +2174,12 @@
    ]
   },
   "split": {},
+  "merge": {
+   "ミッドランドスクエア シネマ": [
+    "ミッドランドスクエア シネマ",
+    "ミッドランドスクエア シネマ2"
+   ]
+  },
   "chainRename": {
    "その他": "独立系"
   }

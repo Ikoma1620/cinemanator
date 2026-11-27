@@ -3,7 +3,7 @@
 
 manual_theaters.json には手入力の追加データが入っている。
   theaters : クローラーの対象外だった館（独立系・取りこぼしたチェーン館）
-  fixes    : クローラーのデータの修正（館名の取り違え、抜けていたフォーマット、館の分割など）
+  fixes    : クローラーのデータの修正（館名の取り違え・公式名への統一、抜けていたフォーマット、館の分割・統合など）
 """
 import glob, json, os
 
@@ -55,12 +55,19 @@ def from_crawled(t, chain, name=None, scr=None):
     return e
 
 
+# 統合する館（2棟に分かれていてもスクリーン番号が通しの館など）: 構成館の名前 → 統合後の名前
+merge_into = {m: target for target, members in fixes.get("merge", {}).items() for m in members}
+merging = {}  # 統合後の名前 → [(chain, theater)]
+
 out = []
 for path in sorted(glob.glob(os.path.join(SRC, "スクリーン情報_*.json"))):
     d = json.load(open(path, encoding="utf-8"))
     chain = fixes["chainRename"].get(d["chain"]["name"], d["chain"]["name"])
     for t in d["theaters"]:
         name = fixes["rename"].get(t["url"], t["theaterName"])
+        if name in merge_into:
+            merging.setdefault(merge_into[name], []).append((chain, t))
+            continue
         if name in fixes["split"]:
             for part in fixes["split"][name]:
                 scr = [t["screens"][i] for i in part["screens"]]
@@ -71,6 +78,11 @@ for path in sorted(glob.glob(os.path.join(SRC, "スクリーン情報_*.json")))
             if f not in e["f"]:
                 e["f"].append(f)
         out.append(e)
+
+for target, parts in merging.items():
+    chain, first = parts[0]
+    scr = [x for _, t in parts for x in t.get("screens") or []]
+    out.append(from_crawled(first, chain, target, scr))
 
 for t in manual["theaters"]:
     formats = []
