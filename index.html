@@ -132,13 +132,13 @@
     .pick-results button { text-align: left; font-size: 15px; padding: 10px 12px; border: none; background: none; display: flex; justify-content: space-between; gap: 10px }
     .pick-results button:hover { background: var(--raise-hi) }
     .pick-results small { color: var(--sub); flex: none }
-    .facts.more { grid-template-columns: repeat(3, 1fr) }
-    .memo { margin-top: 18px; padding: 12px 14px; border: 1px dashed #6a5426; border-radius: 12px; font-size: 14px; color: var(--sub) }
-    .memo summary { color: var(--ink) }
-    .memo summary b { color: var(--accent) }
-    .memo .facts { margin: 12px 0 10px }
-    .memo .tags { margin: 0 0 10px }
-    .memo .row { margin-top: 4px }
+    .hint { color: var(--sub); font-size: 14px; margin: 0 0 12px }
+    a.official { display: block; text-align: center; padding: 13px 16px; margin: 0 0 18px; border: 1.5px solid var(--accent); border-radius: 12px; color: var(--accent); font-weight: 700; text-decoration: none }
+    a.official:hover { background: #2a2218 }
+    .memo { margin-top: 18px; padding: 10px 14px; border: 1px dashed #6a5426; border-radius: 12px; font-size: 14px; color: var(--sub); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px }
+    .memo b { color: var(--accent) }
+    .memo-tools { display: flex; gap: 14px; align-items: center }
+    .memo a.official { display: inline; padding: 0; margin: 0; border: none; font-weight: 400; font-size: 13px; text-decoration: underline; text-underline-offset: 3px }
     .memo .link { font-size: 13px }
     footer { text-align: center; color: var(--mute); font-size: 12px; margin-top: 20px }
     .fade { animation: fade .25s ease }
@@ -170,7 +170,7 @@
         <span><b>チェーン名・都道府県を聞かない</b><small>設備・座席・地方だけで推理します</small></span></label>
     </section>
     <div class="pick">
-      <input class="search" id="pick" placeholder="映画館を検索して設備を確認（例：新宿）" autocomplete="off" aria-label="映画館を検索">
+      <input class="search" id="pick" placeholder="映画館を選んでから始める（例：新宿）" autocomplete="off" aria-label="映画館を検索">
       <div class="pick-results" id="pickResults"></div>
     </div>
     <section class="stage" id="stage" aria-live="polite"></section>
@@ -402,19 +402,8 @@
         bindTools();
       }
 
-      // 映画館の設備をくわしく表示（検索から確認する画面・手元メモ用）
-      function detailHTML(t) {
-        const v = (x, unit = '') => x == null ? '—' : x.toLocaleString() + unit;
-        return `<div class="facts more">
-      <div><b>${v(t.sc)}</b><span>スクリーン</span></div>
-      <div><b>${v(t.st)}</b><span>総座席数</span></div>
-      <div><b>${t.f.length ? v(t.sp) : 0}</b><span>特別なスクリーン</span></div>
-      <div><b>${v(t.mx)}</b><span>最大スクリーンの席数</span></div>
-      <div><b>${v(t.mn)}</b><span>最小スクリーンの席数</span></div>
-      <div><b>${v(t.w, 'm')}</b><span>最大スクリーンの横幅</span></div>
-    </div>
-    <div class="tags">${t.f.length ? t.f.map(f => `<span>${esc(f)}</span>`).join('') : '<small style="color:var(--sub)">IMAX・4DX などの特別なフォーマットはありません</small>'}</div>`;
-      }
+      // 設備はこの画面には出さず、公式の設備ページを別タブで開いて確認してもらう
+      const officialLink = (t, label) => `<a class="official" href="${esc(t.u)}" target="_blank" rel="noopener">${label} ↗</a>`;
 
       function renderDetail(i) {
         const t = T[i];
@@ -423,8 +412,9 @@
     <div class="fade guess">
       <p class="label">この映画館で始めますか？</p>
       <h2>${esc(t.n)}</h2>
-      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}　<a href="${esc(t.u)}" target="_blank" rel="noopener">設備ページ ↗</a></p>
-      ${detailHTML(t)}
+      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}</p>
+      <p class="hint">スクリーン数や座席数、IMAX などの設備は公式の設備ページで確認できます（別タブで開きます）。</p>
+      ${officialLink(t, '公式の設備ページを開く')}
       <div class="row">
         <button class="primary" id="go">この映画館で始める</button>
         <button id="back">やめる</button>
@@ -437,9 +427,8 @@
       function memoHTML() {
         if (chosen == null) return '';
         const t = T[chosen];
-        return `<details class="memo"><summary>あなたが選んだ映画館：<b>${esc(t.n)}</b>（設備を見る）</summary>
-      ${detailHTML(t)}
-      <button class="link" id="unchoose">選択を解除</button></details>`;
+        return `<div class="memo">あなたが選んだ映画館：<b>${esc(t.n)}</b>
+      <span class="memo-tools">${officialLink(t, '設備ページ')}<button class="link" id="unchoose">選択を解除</button></span></div>`;
       }
 
       function factsHTML(t) {
@@ -551,7 +540,7 @@
       const showPick = () => {
         const s = norm(pick.value);
         const hits = s ? T.map((t, i) => ({ t, i })).filter(x => norm(x.t.n + x.t.p + x.t.c).includes(s)).slice(0, 40) : [];
-        pickRes.innerHTML = hits.map(x => `<button data-i="${x.i}">${esc(x.t.n)}<small>${esc(x.t.p)}・${x.t.sc ?? '?'}スクリーン</small></button>`).join('')
+        pickRes.innerHTML = hits.map(x => `<button data-i="${x.i}">${esc(x.t.n)}<small>${esc(x.t.p)}</small></button>`).join('')
           || (s ? '<small style="color:var(--sub);padding:8px 12px">見つかりませんでした</small>' : '');
         pickRes.querySelectorAll('[data-i]').forEach(b => b.onclick = () => {
           pick.value = ''; pickRes.innerHTML = ''; pick.blur(); renderDetail(+b.dataset.i);

@@ -1062,7 +1062,7 @@
    "chain": "独立系",
    "theaterName": "シネマシティ",
    "prefecture": "東京都",
-   "url": "https://cinemacity.co.jp/",
+   "url": "https://cinemacity.co.jp/about/cinema_one.html",
    "source": "公式",
    "note": "シネマ・ワン（f〜k studio）とシネマ・ツー（a〜e studio）を1館として扱う。b studioは2026年8月のリニューアルでDolby Atmos導入（公式ニュース）",
    "screens": [
@@ -1196,7 +1196,7 @@
    "chain": "独立系",
    "theaterName": "チネチッタ",
    "prefecture": "神奈川県",
-   "url": "https://cinecitta.co.jp/",
+   "url": "https://cinecitta.co.jp/delegate",
    "source": "公式・Wikipedia",
    "note": "CINE8はLIVE ZOUND、CINE12はLIVEサウンド（独自音響）。CINE8・12以外はWikipediaの値",
    "screens": [
