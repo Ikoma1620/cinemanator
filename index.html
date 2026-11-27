@@ -220,7 +220,10 @@
         if (t.f.includes(f)) return true;
         return UNRELIABLE_NO.has(f) && !chainHas[t.c]?.has(f) ? null : false;
       });
-      add('f:any', 'facility', 'B', '特別なスクリーンはありますか？', t => t.f.length > 0);
+      // D-BOX・プレミアムシアターは座席に関するものなので「特別なスクリーン」とは別に聞く
+      const SEAT_FORMATS = new Set(['D-BOX', 'プレミアムシアター']);
+      add('f:any', 'facility', 'B', '特別なスクリーンはありますか？', t => t.f.some(f => !SEAT_FORMATS.has(f)));
+      add('seat:any', 'facility', 'B', 'D-BOXやプレミアムシアターなど、特別な座席のスクリーンはありますか？', t => t.f.some(f => SEAT_FORMATS.has(f)));
       for (const n of [2, 3]) add('sp:' + n, 'facility', 'C', `特別なスクリーンは${n}つ以上ありますか？`, t => over(t.sp, n));
       for (const n of [6, 8, 10, 12, 14]) add('sc:' + n, 'number', 'B', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
       for (const n of [1000, 1500, 2000, 2500]) add('st:' + n, 'number', 'C', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
@@ -228,9 +231,10 @@
       for (const n of [18, 20]) add('w:' + n, 'number', 'C', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
       // 細かい数値：数字しか違わない館どうしを分けるための最後の手段
       for (let n = 2; n <= 18; n++) if (![6, 8, 10, 12, 14].includes(n)) add('scD:' + n, 'fine', 'D', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
-      for (let n = 400; n <= 3000; n += 100) if (n % 500) add('stD:' + n, 'fine', 'D', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
-      for (let n = 150; n <= 550; n += 25) if (n % 100) add('mxD:' + n, 'fine', 'D', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
-      for (let n = 12; n <= 20; n += 1) if (n !== 18 && n !== 20) add('wD:' + n, 'fine', 'D', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
+      // 小さな館どうしも分けられるよう、低い値から用意する（B・C の質問と同じ値は除く）
+      for (let n = 100; n <= 3000; n += 100) if (![1000, 1500, 2000, 2500].includes(n)) add('stD:' + n, 'fine', 'D', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
+      for (let n = 50; n <= 550; n += 25) if (![300, 400, 500].includes(n)) add('mxD:' + n, 'fine', 'D', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
+      for (let n = 6; n <= 20; n += 1) if (n !== 18 && n !== 20) add('wD:' + n, 'fine', 'D', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
       // チェーン・都道府県は最後の方（「チェーン・都道府県を聞かない」モードでは使わない）
       // チェーンの聞き方（名前が複数あるチェーンは含まれる名前を書き添える）
       const CHAIN_TEXT = {

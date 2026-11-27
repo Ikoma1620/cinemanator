@@ -13,6 +13,21 @@ manual = json.load(open(os.path.join(HERE, "manual_theaters.json"), encoding="ut
 fixes = manual["fixes"]
 
 
+# 座席に関するもの（スクリーンの種類ではない）。「特別なスクリーン」の数には入れない
+SEAT_FORMATS = {"D-BOX", "プレミアムシアター"}
+
+
+def is_special_screen(fs, extra=()):
+    return any(f not in SEAT_FORMATS for f in list(fs) + list(extra))
+
+
+def is_screen(x):
+    """1つのスクリーンの中の座席区分（エグゼクティブシート・キッズシートなど、座席数0で別行になっているもの）や、
+    上映設備のないホールはスクリーンとして数えない"""
+    return (isinstance(x.get("seats"), (int, float)) and x["seats"] > 0
+            and "上映設備なし" not in (x.get("label") or ""))
+
+
 def entry(name, chain, pref, url, screens, formats, special=None):
     """screens: [{"seats", "wheelchair", "width", "formats"}]"""
     # 座席数は車椅子スペースを含めた数にする（車椅子の数が不明なスクリーンは座席数のみ）
@@ -26,7 +41,8 @@ def entry(name, chain, pref, url, screens, formats, special=None):
         "st": sum(seats) if seats else None,
         # 車いす席が未記載のスクリーンがあれば「不明」
         "wc": None if not wcs or any(w is None for w in wcs) else sum(wcs),
-        "sp": special if special is not None else sum(1 for s in screens if s.get("formats")),
+        # 特別なスクリーンの数：座席関連（D-BOX など）以外のフォーマットがあるスクリーン。1スクリーンに複数あっても1つ
+        "sp": special if special is not None else sum(1 for s in screens if is_special_screen(s.get("formats") or [])),
         "f": formats,
         "mx": max(seats) if seats else None,
         "mn": min(seats) if seats else None,
@@ -42,17 +58,14 @@ def from_crawled(t, chain, name=None, scr=None):
         "wheelchair": x.get("wheelchair"),
         "width": (x.get("size") or {}).get("width"),
         "formats": x.get("formats") or [],
-    } for x in scr if isinstance(x.get("seats"), (int, float)) and x["seats"] > 0]
+    } for x in scr if is_screen(x)]
     if scr is t.get("screens"):
         formats = list(s.get("formats") or [])
-        special = s.get("specialScreens")
-    else:  # 分割した館はスクリーンから集計し直す
+    else:  # 分割・統合した館はスクリーンから集計し直す
         formats = sorted({f for x in screens for f in x["formats"]})
-        special = None
-    e = entry(name or t["theaterName"], chain, t["prefecture"], t["url"], screens, formats, special)
-    if scr is t.get("screens") and s.get("screens"):
-        e["sc"] = s["screens"]
-    return e
+    # スクリーン数・特別なスクリーン数は実際のスクリーンから数える
+    # （1つのスクリーンに複数のフォーマットがあっても1つ）
+    return entry(name or t["theaterName"], chain, t["prefecture"], t["url"], screens, formats)
 
 
 # 統合する館（2棟に分かれていてもスクリーン番号が通しの館など）: 構成館の名前 → 統合後の名前
@@ -89,7 +102,10 @@ for t in manual["theaters"]:
     for f in [f for s in t["screens"] for f in s["formats"]] + t.get("extraFormats", []):
         if f not in formats:
             formats.append(f)
-    out.append(entry(t["theaterName"], t["chain"], t["prefecture"], t["url"], t["screens"], formats))
+    # スクリーンが特定できないフォーマット（extraFormats）は、別のスクリーンにあるものとして数える
+    extra = [f for f in t.get("extraFormats", []) if not any(f in s["formats"] for s in t["screens"])]
+    special = sum(1 for s in t["screens"] if is_special_screen(s["formats"])) + sum(1 for f in extra if f not in SEAT_FORMATS)
+    out.append(entry(t["theaterName"], t["chain"], t["prefecture"], t["url"], t["screens"], formats, special))
 
 names = [t["n"] for t in out]
 dup = {n for n in names if names.count(n) > 1}
