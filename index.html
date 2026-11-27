@@ -11,12 +11,21 @@
   <meta property="og:url" content="https://ikoma1620.github.io/cinemanator/">
   <meta property="og:title" content="シネマネーター — あなたの思い浮かべた映画館を当てます">
   <meta property="og:description" content="思い浮かべた映画館を、質問に答えるだけで当てます。全国のシネコン・独立系 約370館に対応。">
-  <meta property="og:image" content="https://ikoma1620.github.io/cinemanator/ogp.png">
+  <!-- 画像を差し替えたら ?v= を上げる（X などは同じURLの画像をしばらく覚えているため） -->
+  <meta property="og:image" content="https://ikoma1620.github.io/cinemanator/ogp.png?v=2">
+  <meta property="og:image:secure_url" content="https://ikoma1620.github.io/cinemanator/ogp.png?v=2">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="シネマネーター：思い浮かべた映画館を、質問だけで当てます">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="シネマネーター">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="シネマネーター — あなたの思い浮かべた映画館を当てます">
+  <meta name="twitter:description" content="思い浮かべた映画館を、質問に答えるだけで当てます。全国のシネコン・独立系 約370館に対応。">
+  <meta name="twitter:image" content="https://ikoma1620.github.io/cinemanator/ogp.png?v=2">
+  <meta name="twitter:image:alt" content="シネマネーター：思い浮かべた映画館を、質問だけで当てます">
+  <link rel="canonical" href="https://ikoma1620.github.io/cinemanator/">
   <style>
     :root {
       --bg: #121014;
@@ -163,10 +172,9 @@
     .qlist summary { color: var(--accent) }
     .qlist .tags { margin: 10px 0 0 }
     .share { display: flex; align-items: center; gap: 16px; margin: 4px 0 18px; flex-wrap: wrap }
-    .xbtn { background: #000; color: #fff; border: 1px solid #444; border-radius: 999px; padding: 10px 20px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px }
+    .xbtn { background: #000; color: #fff; border: 1px solid #444; border-radius: 999px; padding: 10px 20px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; text-decoration: none }
     .xbtn:hover { background: #1a1a1a; border-color: #777 }
     .xlogo { font-size: 18px; line-height: 1 }
-    .share .link { font-size: 14px }
     .hint { color: var(--sub); font-size: 14px; margin: 0 0 12px }
     a.official { display: block; text-align: center; padding: 13px 16px; margin: 0 0 18px; border: 1.5px solid var(--accent); border-radius: 12px; color: var(--accent); font-weight: 700; text-decoration: none }
     a.official:hover { background: #2a2218 }
@@ -487,8 +495,9 @@
       const officialLink = (t, label) => `<a class="official" href="${esc(t.u)}" target="_blank" rel="noopener">${label} ↗</a>`;
 
       // ---------- X（Twitter）でシェア ----------
-      // スマホなど画像を共有できる環境では「画像付きで共有」（共有シートからXを選ぶ）。
-      // それ以外は投稿画面（テキスト＋URL）を開き、画像は「画像を保存」から添付してもらう。
+      // ボタンは普通のリンク（<a target="_blank">）にする。
+      // クリック後に非同期処理をはさむとポップアップがブロックされ「2回押さないと開かない」ことがあるため、
+      // 投稿画面のURLは画面を描くときに作っておき、押したら即座に開く。
       const SITE_URL = 'https://ikoma1620.github.io/cinemanator/';
       function shareText(t, won) {
         const n = state.history.length;
@@ -496,59 +505,9 @@
           ? `シネマネーターが「${t.n}」を${n}問で当てました🎬（${MODES[mode].name}）\n#シネマネーター`
           : `シネマネーターに「${t.n}」で勝ちました！${n}問でも当てられず🎬（${MODES[mode].name}）\n#シネマネーター`;
       }
-      function shareHTML() {
-        return `<div class="share">
-        <button class="xbtn" id="shareX"><span class="xlogo">𝕏</span>でシェア</button>
-        <button class="link" id="saveImg">画像を保存</button>
-      </div>`;
-      }
-      // 結果カードの画像（1200×630）を作る
-      function shareImage(t, won) {
-        const W = 1200, H = 630, c = document.createElement('canvas');
-        c.width = W; c.height = H;
-        const g = c.getContext('2d'), F = '"Hiragino Sans","Noto Sans JP",system-ui,sans-serif';
-        const bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#2a2218'); bg.addColorStop(1, '#121014');
-        g.fillStyle = bg; g.fillRect(0, 0, W, H);
-        g.strokeStyle = '#6a5426'; g.lineWidth = 4; g.strokeRect(24, 24, W - 48, H - 48);
-        g.fillStyle = '#f0b84d'; g.font = `800 44px ${F}`; g.fillText('シネマネーター', 70, 110);
-        g.fillStyle = '#c3b8ad'; g.font = `500 30px ${F}`;
-        g.fillText(won ? `${state.history.length}問で当てました！` : `${state.history.length}問でも当てられませんでした…`, 70, 200);
-        // 館名（長いときは縮める）
-        let size = 84; g.font = `800 ${size}px ${F}`;
-        while (g.measureText(t.n).width > W - 140 && size > 40) { size -= 4; g.font = `800 ${size}px ${F}`; }
-        g.fillStyle = '#f6f1ea'; g.fillText(t.n, 70, 320);
-        g.fillStyle = '#c3b8ad'; g.font = `500 32px ${F}`; g.fillText(`${t.c} ／ ${t.p}`, 70, 385);
-        const facts = [[t.sc, 'スクリーン'], [t.st != null ? t.st.toLocaleString() : '—', '総座席'], [t.mx ?? '—', '最大スクリーンの席数']];
-        facts.forEach(([v, l], k) => {
-          const x = 70 + k * 300;
-          g.fillStyle = '#f0b84d'; g.font = `800 56px ${F}`; g.fillText(String(v), x, 500);
-          g.fillStyle = '#c3b8ad'; g.font = `500 24px ${F}`; g.fillText(l, x, 540);
-        });
-        g.fillStyle = '#8f857b'; g.font = `500 22px ${F}`; g.textAlign = 'right';
-        g.fillText(`${MODES[mode].name}　${SITE_URL.replace('https://', '')}`, W - 60, H - 50);
-        return new Promise(res => c.toBlob(res, 'image/png'));
-      }
-      function bindShare(t, won) {
-        const text = shareText(t, won);
-        document.getElementById('shareX').onclick = async () => {
-          try {
-            const blob = await shareImage(t, won);
-            const file = new File([blob], 'cinemanator.png', { type: 'image/png' });
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
-              await navigator.share({ files: [file], text: text + '\n' + SITE_URL });
-              return;
-            }
-          } catch (e) { if (e && e.name === 'AbortError') return; }
-          const u = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
-          window.open(u, '_blank', 'noopener');
-        };
-        document.getElementById('saveImg').onclick = async () => {
-          const blob = await shareImage(t, won);
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob); a.download = 'cinemanator.png';
-          document.body.appendChild(a); a.click(); a.remove();
-          setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-        };
+      function shareHTML(t, won) {
+        const u = 'https://x.com/intent/post?text=' + encodeURIComponent(shareText(t, won)) + '&url=' + encodeURIComponent(SITE_URL);
+        return `<div class="share"><a class="xbtn" href="${esc(u)}" target="_blank" rel="noopener noreferrer"><span class="xlogo">𝕏</span>でシェア</a></div>`;
       }
 
       function renderStart() {
@@ -636,10 +595,9 @@
       <p class="chain">${esc(t.c)} ／ ${esc(t.p)}</p>
       ${factsHTML(t)}
       <p><a href="${esc(t.u)}" target="_blank" rel="noopener">公式の設備ページを見る ↗</a></p>
-      ${shareHTML()}
+      ${shareHTML(t, true)}
       <div class="row"><button class="primary" id="restart">もう一度遊ぶ</button></div>
     </div>`;
-        bindShare(t, true);
         bindTools();
       }
 
@@ -680,11 +638,10 @@
       <h2>${esc(t.n)}</h2>
       <p class="chain">${esc(t.c)} ／ ${esc(t.p)}</p>
       ${factsHTML(t)}
-      ${shareHTML()}
+      ${shareHTML(t, false)}
       ${diffs.length ? `<p class="label">データと食い違った回答：</p><ul style="color:var(--sub);font-size:13px;padding-left:18px">${diffs.map(d => `<li>${esc(d)}</li>`).join('')}</ul>` : '<p class="label">回答とデータに矛盾はありませんでした。くやしい！</p>'}
       <div class="row"><button class="primary" id="restart">もう一度遊ぶ</button></div>
     </div>`;
-        bindShare(t, false);
         bindTools();
       }
 
