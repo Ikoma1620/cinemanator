@@ -1,0 +1,2142 @@
+{
+ "note": "手入力の追加データ。build_data.py がクローラーのJSONと合わせて data.js を作る。",
+ "theaters": [
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "ユナイテッド・シネマ 水戸",
+   "prefecture": "茨城県",
+   "url": "https://www.unitedcinemas.jp/mito/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 159,
+     "width": 9.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 134,
+     "width": 8.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 112,
+     "width": 11.9,
+     "wheelchair": null,
+     "formats": [
+      "4DX"
+     ]
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 124,
+     "width": 8.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 150,
+     "width": 9.2,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 460,
+     "width": 15.6,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 154,
+     "width": 10.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 174,
+     "width": 9.9,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "ユナイテッド・シネマ わかば",
+   "prefecture": "埼玉県",
+   "url": "https://www.unitedcinemas.jp/wakaba/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 418,
+     "width": 15.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 166,
+     "width": 8.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 166,
+     "width": 8.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 166,
+     "width": 8.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 112,
+     "width": 11.7,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 291,
+     "width": 13.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 147,
+     "width": 9.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 117,
+     "width": 8.7,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 147,
+     "width": 9.9,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "ユナイテッド・シネマ アクアシティお台場",
+   "prefecture": "東京都",
+   "url": "https://www.unitedcinemas.jp/odaiba/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 612,
+     "width": 16.2,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 151,
+     "width": 7.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 317,
+     "width": 10.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 151,
+     "width": 7.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 95,
+     "width": 7.7,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 95,
+     "width": 7.7,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 217,
+     "width": 9.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 108,
+     "width": 10.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 188,
+     "width": 10.2,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン10",
+     "seats": 238,
+     "width": 10.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン11",
+     "seats": 251,
+     "width": 9.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン12",
+     "seats": 238,
+     "width": 10.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン13",
+     "seats": 177,
+     "width": null,
+     "wheelchair": null,
+     "formats": [
+      "ScreenX"
+     ]
+    }
+   ],
+   "extraFormats": [
+    "4DX"
+   ]
+  },
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "シネプレックス平塚",
+   "prefecture": "神奈川県",
+   "url": "https://www.unitedcinemas.jp/hiratsuka/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 172,
+     "width": 9.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 209,
+     "width": 9.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 134,
+     "width": 6.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 204,
+     "width": 7.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 56,
+     "width": 7.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 190,
+     "width": 6.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 254,
+     "width": 12.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 377,
+     "width": 12.0,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "ユナイテッド・シネマ 岡崎",
+   "prefecture": "愛知県",
+   "url": "https://www.unitedcinemas.jp/okazaki/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 175,
+     "width": 9.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 175,
+     "width": 9.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 206,
+     "width": 9.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 132,
+     "width": 9.3,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 161,
+     "width": 9.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 161,
+     "width": 9.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 271,
+     "width": 11.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 271,
+     "width": 11.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 242,
+     "width": null,
+     "wheelchair": null,
+     "formats": [
+      "IMAX"
+     ]
+    }
+   ]
+  },
+  {
+   "chain": "ユナイテッド・シネマ",
+   "theaterName": "ユナイテッド・シネマ 小倉",
+   "prefecture": "福岡県",
+   "url": "https://www.unitedcinemas.jp/kokura/about_facilities.html",
+   "source": "公式",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 240,
+     "width": null,
+     "wheelchair": null,
+     "formats": [
+      "IMAX"
+     ]
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 310,
+     "width": 13.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 162,
+     "width": 11.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 192,
+     "width": 11.5,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 119,
+     "width": 8.6,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 142,
+     "width": 8.6,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 119,
+     "width": 8.6,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 154,
+     "width": 9.2,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 139,
+     "width": 9.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン10",
+     "seats": 154,
+     "width": 9.2,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "セントラルシネマ",
+   "theaterName": "セントラルシネマ大牟田",
+   "prefecture": "福岡県",
+   "url": "https://www.mcc-9.jp/omuta/facilities/",
+   "source": "映画.com",
+   "note": "公式サイト（mcc-9.jp）にあるがクローラー対象外だった。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 263,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 304,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 209,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 141,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 173,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 162,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 162,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ太陽帯広",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10501/1031/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 236,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 84,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマヴィレッジ8・イオン柏",
+   "prefecture": "青森県",
+   "url": "https://eiga.com/theater/2/20501/2009/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 292,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 222,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 106,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 84,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 93,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 138,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 93,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ・リオーネ古川",
+   "prefecture": "宮城県",
+   "url": "https://eiga.com/theater/4/40401/2029/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 303,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 131,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 113,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 113,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 235,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "郡山テアトル",
+   "prefecture": "福島県",
+   "url": "https://eiga.com/theater/7/70201/2047/",
+   "source": "映画.com",
+   "note": "2棟（1・2・3と6・7・8）を1館として扱う",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 284,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 247,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 143,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "小山シネマロブレ",
+   "prefecture": "栃木県",
+   "url": "https://eiga.com/theater/9/90301/3224/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 153,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネティアラ21",
+   "prefecture": "埼玉県",
+   "url": "https://eiga.com/theater/11/110202/3185/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 359,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 244,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 263,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 139,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 161,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 97,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 112,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "京成ローザ10",
+   "prefecture": "千葉県",
+   "url": "https://www.iworekeisei.co.jp/rosa10",
+   "source": "映画.com",
+   "note": "East・Westの2棟を1館として扱う",
+   "screens": [
+    {
+     "name": "East スクリーン1",
+     "seats": 92,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "East スクリーン2",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "East スクリーン3",
+     "seats": 73,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "East スクリーン4",
+     "seats": 240,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "East スクリーン5",
+     "seats": 309,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "East スクリーン6",
+     "seats": 239,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "West スクリーン1",
+     "seats": 194,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "West スクリーン2",
+     "seats": 118,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "West スクリーン3",
+     "seats": 180,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "West スクリーン4",
+     "seats": 130,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマイクスピアリ",
+   "prefecture": "千葉県",
+   "url": "https://www.ikspiari.com/cinema/index.html",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 164,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 314,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 314,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 164,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン10",
+     "seats": 164,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン11",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン12",
+     "seats": 314,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン13",
+     "seats": 314,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン14",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン15",
+     "seats": 164,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン16",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマシティ",
+   "prefecture": "東京都",
+   "url": "https://cinemacity.co.jp/",
+   "source": "公式",
+   "note": "シネマ・ワン（f〜k studio）とシネマ・ツー（a〜e studio）を1館として扱う。b studioは2026年8月のリニューアルでDolby Atmos導入（公式ニュース）",
+   "screens": [
+    {
+     "name": "f studio",
+     "seats": 226,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "g studio",
+     "seats": 279,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "h studio",
+     "seats": 98,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "i studio",
+     "seats": 170,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "j studio",
+     "seats": 77,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "k studio",
+     "seats": 175,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "a studio",
+     "seats": 382,
+     "width": null,
+     "wheelchair": 4,
+     "formats": []
+    },
+    {
+     "name": "b studio",
+     "seats": 303,
+     "width": null,
+     "wheelchair": 2,
+     "formats": [
+      "Dolby Atmos"
+     ]
+    },
+    {
+     "name": "c studio",
+     "seats": 180,
+     "width": null,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "d studio",
+     "seats": 177,
+     "width": null,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "e studio",
+     "seats": 177,
+     "width": null,
+     "wheelchair": 2,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "アップリンク吉祥寺",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130809/3285/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 52,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 98,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 58,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 29,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "チネチッタ",
+   "prefecture": "神奈川県",
+   "url": "https://cinecitta.co.jp/",
+   "source": "公式・Wikipedia",
+   "note": "CINE8はLIVE ZOUND、CINE12はLIVEサウンド（独自音響）。CINE8・12以外はWikipediaの値",
+   "screens": [
+    {
+     "name": "CINE1",
+     "seats": 107,
+     "width": 7.7,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE2",
+     "seats": 129,
+     "width": 8.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE3",
+     "seats": 138,
+     "width": 9.1,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE4",
+     "seats": 290,
+     "width": 10.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE5",
+     "seats": 284,
+     "width": 11.6,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE6",
+     "seats": 244,
+     "width": 10.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE7",
+     "seats": 244,
+     "width": 10.8,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE8",
+     "seats": 532,
+     "width": 15.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE9",
+     "seats": 154,
+     "width": 9.4,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE10",
+     "seats": 191,
+     "width": 10.9,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE11",
+     "seats": 407,
+     "width": 16.3,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "CINE12",
+     "seats": 488,
+     "width": 15.7,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "JMAX THEATERとやま",
+   "prefecture": "富山県",
+   "url": "http://www.j-max.jp/toyama/facility/",
+   "source": "公式",
+   "note": "シアター1はAuro 11.1ch（独自音響）",
+   "screens": [
+    {
+     "name": "シアター1",
+     "seats": 316,
+     "width": 13.55,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "シアター2",
+     "seats": 77,
+     "width": 6.9,
+     "wheelchair": 1,
+     "formats": []
+    },
+    {
+     "name": "シアター3",
+     "seats": 125,
+     "width": 9.15,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "シアター4",
+     "seats": 86,
+     "width": 7.45,
+     "wheelchair": 1,
+     "formats": []
+    },
+    {
+     "name": "シアター5",
+     "seats": 77,
+     "width": 6.99,
+     "wheelchair": 1,
+     "formats": []
+    },
+    {
+     "name": "シアター6",
+     "seats": 125,
+     "width": 9.15,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "シアター7",
+     "seats": 167,
+     "width": 12.14,
+     "wheelchair": 2,
+     "formats": []
+    },
+    {
+     "name": "シアター8",
+     "seats": 205,
+     "width": 13.55,
+     "wheelchair": 2,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "テアトルサンク",
+   "prefecture": "福井県",
+   "url": "https://www.theatrecinq.jp/screen/",
+   "source": "公式",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 592,
+     "width": 16.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 160,
+     "width": 10.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 207,
+     "width": 10.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 285,
+     "width": 11.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 241,
+     "width": 11.0,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "鯖江アレックスシネマ",
+   "prefecture": "福井県",
+   "url": "https://alex-cinemas.com/sabae/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 146,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 194,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 194,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 146,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 302,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "水口アレックスシネマ",
+   "prefecture": "滋賀県",
+   "url": "https://alex-cinemas.com/minakuti/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 151,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 151,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 92,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 293,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 293,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "高槻アレックスシネマ",
+   "prefecture": "大阪府",
+   "url": "https://alex-cinemas.com/takatsuki/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 285,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 427,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 162,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 151,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 129,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 129,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 158,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 301,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 78,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "長野グランドシネマズ",
+   "prefecture": "長野県",
+   "url": "https://grandcinemas.jp/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 302,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 166,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 163,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 154,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 163,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 181,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 129,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 107,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "松本シネマライツ8",
+   "prefecture": "長野県",
+   "url": "https://cinema-lights8.cineticket.jp/theater/matsumoto/schedule",
+   "source": "映画.com",
+   "note": "スクリーン8はMeta Sound（独自音響）",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 227,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 192,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 159,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 364,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "アイシティシネマ",
+   "prefecture": "長野県",
+   "url": "https://www.inouedp.co.jp/icitycinema/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 136,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 87,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 47,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 94,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 270,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "静岡東宝会館",
+   "prefecture": "静岡県",
+   "url": "http://www.cine-7.com/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 355,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 264,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 52,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 129,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 69,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジョイランドシネマみしま",
+   "prefecture": "静岡県",
+   "url": "https://joyland.jp/contents/cinema/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 183,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 127,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 121,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 132,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 101,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 151,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "藤枝シネ・プレーゴ",
+   "prefecture": "静岡県",
+   "url": "http://www.cineprego.jp/fecp_page06.html",
+   "source": "公式",
+   "note": "",
+   "screens": [
+    {
+     "name": "SCREEN1",
+     "seats": 84,
+     "width": 7.07,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN2",
+     "seats": 84,
+     "width": 7.07,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN3",
+     "seats": 106,
+     "width": 8.17,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN4",
+     "seats": 115,
+     "width": 8.1,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN5",
+     "seats": 84,
+     "width": 7.0,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN6",
+     "seats": 150,
+     "width": 9.2,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "SCREEN7",
+     "seats": 266,
+     "width": 15.44,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジストシネマ和歌山",
+   "prefecture": "和歌山県",
+   "url": "https://xystcinema.com/theater_wakayama/theater/",
+   "source": "公式・映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 403,
+     "width": 17.3,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 275,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 275,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 68,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 197,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 197,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン9",
+     "seats": 184,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン10",
+     "seats": 184,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "福山エーガル8シネマズ",
+   "prefecture": "広島県",
+   "url": "https://www.furec.jp/theater/",
+   "source": "公式・映画.com",
+   "note": "公式は「9つのシアター」と記載、映画.comは8スクリーン",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 87,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 87,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 125,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "IMAXデジタルシアター",
+     "seats": 225,
+     "width": null,
+     "wheelchair": null,
+     "formats": [
+      "IMAX"
+     ]
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 214,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 170,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 114,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン8",
+     "seats": 87,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマボックス太陽",
+   "prefecture": "長崎県",
+   "url": "https://eiga.com/theater/42/420201/7034/",
+   "source": "映画.com",
+   "note": "",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 127,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 239,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 252,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 60,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン6",
+     "seats": 50,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン7",
+     "seats": 54,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  }
+ ],
+ "fixes": {
+  "rename": {
+   "https://startheaters.jp/theaters/2/floor-guide/": "シネマライカム",
+   "https://startheaters.jp/theaters/3/floor-guide/": "ミハマ7プレックス",
+   "https://startheaters.jp/theaters/5/floor-guide/": "シネマパレット",
+   "https://startheaters.jp/theaters/6/floor-guide/": "シネマプラザハウス"
+  },
+  "addFormats": {
+   "TOHOシネマズ 熊本サクラマチ": [
+    "DTS:X"
+   ]
+  },
+  "split": {},
+  "chainRename": {
+   "その他": "独立系"
+  }
+ }
+}

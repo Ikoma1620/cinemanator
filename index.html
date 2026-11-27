@@ -123,6 +123,23 @@
     .search:focus { outline: none; border-color: var(--accent) }
     .search-results { max-height: 260px; overflow: auto; display: grid; gap: 6px }
     .search-results button { font-size: 15px; padding: 10px 14px; text-align: left }
+    /* ---- 映画館を調べてから始める ---- */
+    .pick { position: relative; margin-bottom: 14px }
+    .pick .search { margin: 0; padding-left: 40px }
+    .pick::before { content: "🔍"; position: absolute; left: 14px; top: 12px; font-size: 15px; opacity: .7 }
+    .pick-results { position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px; max-height: 320px; overflow: auto; display: grid; gap: 4px; box-shadow: 0 16px 40px rgba(0,0,0,.5) }
+    .pick-results:empty { display: none }
+    .pick-results button { text-align: left; font-size: 15px; padding: 10px 12px; border: none; background: none; display: flex; justify-content: space-between; gap: 10px }
+    .pick-results button:hover { background: var(--raise-hi) }
+    .pick-results small { color: var(--sub); flex: none }
+    .facts.more { grid-template-columns: repeat(3, 1fr) }
+    .memo { margin-top: 18px; padding: 12px 14px; border: 1px dashed #6a5426; border-radius: 12px; font-size: 14px; color: var(--sub) }
+    .memo summary { color: var(--ink) }
+    .memo summary b { color: var(--accent) }
+    .memo .facts { margin: 12px 0 10px }
+    .memo .tags { margin: 0 0 10px }
+    .memo .row { margin-top: 4px }
+    .memo .link { font-size: 13px }
     footer { text-align: center; color: var(--mute); font-size: 12px; margin-top: 20px }
     .fade { animation: fade .25s ease }
     @keyframes fade { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
@@ -152,6 +169,10 @@
       <label class="mode"><input type="checkbox" id="nochain"><span class="switch"></span>
         <span><b>チェーン名・都道府県を聞かない</b><small>設備・座席・地方だけで推理します</small></span></label>
     </section>
+    <div class="pick">
+      <input class="search" id="pick" placeholder="映画館を検索して設備を確認（例：新宿）" autocomplete="off" aria-label="映画館を検索">
+      <div class="pick-results" id="pickResults"></div>
+    </div>
     <section class="stage" id="stage" aria-live="polite"></section>
     <footer>
       <p id="foot"></p>
@@ -216,7 +237,7 @@
       for (let n = 150; n <= 550; n += 25) if (n % 100) add('mxD:' + n, 'fine', 'D', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
       for (let n = 12; n <= 20; n += 1) if (n !== 18 && n !== 20) add('wD:' + n, 'fine', 'D', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
       // チェーン・都道府県は最後の方（「チェーン・都道府県を聞かない」モードでは使わない）
-      for (const c of new Set(T.map(t => t.c))) add('c:' + c, 'chain', 'A', `${c}ですか？`, t => t.c === c);
+      for (const c of new Set(T.map(t => t.c))) add('c:' + c, 'chain', 'A', c === '独立系' ? 'チェーン以外の独立系の映画館ですか？' : `${c}ですか？`, t => t.c === c);
       for (const p of new Set(T.map(t => t.p))) add('p:' + p, 'pref', 'A', `${p}にありますか？`, t => t.p === p);
 
       // ---------- 推論 ----------
@@ -261,6 +282,7 @@
       }
 
       let state;
+      let chosen = null;   // 検索で選んで確認した映画館（推理には使わない。回答の手元メモ用）
       function reset() {
         state = { history: [], rejected: new Set(), guesses: 0, current: null, mode: 'ask' };
         next();
@@ -373,10 +395,51 @@
         <button class="link" id="undo" ${state.history.length ? '' : 'disabled'}>← ひとつ前に戻る</button>
         <button class="link" id="restart">最初から</button>
       </div>
+      ${memoHTML()}
       ${candidatesHTML(w)}
     </div>`;
         stage.querySelectorAll('[data-a]').forEach(b => b.onclick = () => answer(parseFloat(b.dataset.a)));
         bindTools();
+      }
+
+      // 映画館の設備をくわしく表示（検索から確認する画面・手元メモ用）
+      function detailHTML(t) {
+        const v = (x, unit = '') => x == null ? '—' : x.toLocaleString() + unit;
+        return `<div class="facts more">
+      <div><b>${v(t.sc)}</b><span>スクリーン</span></div>
+      <div><b>${v(t.st)}</b><span>総座席数</span></div>
+      <div><b>${t.f.length ? v(t.sp) : 0}</b><span>特別なスクリーン</span></div>
+      <div><b>${v(t.mx)}</b><span>最大スクリーンの席数</span></div>
+      <div><b>${v(t.mn)}</b><span>最小スクリーンの席数</span></div>
+      <div><b>${v(t.w, 'm')}</b><span>最大スクリーンの横幅</span></div>
+    </div>
+    <div class="tags">${t.f.length ? t.f.map(f => `<span>${esc(f)}</span>`).join('') : '<small style="color:var(--sub)">IMAX・4DX などの特別なフォーマットはありません</small>'}</div>`;
+      }
+
+      function renderDetail(i) {
+        const t = T[i];
+        state.mode = 'detail';
+        stage.innerHTML = `
+    <div class="fade guess">
+      <p class="label">この映画館で始めますか？</p>
+      <h2>${esc(t.n)}</h2>
+      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}　<a href="${esc(t.u)}" target="_blank" rel="noopener">設備ページ ↗</a></p>
+      ${detailHTML(t)}
+      <div class="row">
+        <button class="primary" id="go">この映画館で始める</button>
+        <button id="back">やめる</button>
+      </div>
+    </div>`;
+        document.getElementById('go').onclick = () => { chosen = i; reset(); };
+        document.getElementById('back').onclick = () => next();
+      }
+
+      function memoHTML() {
+        if (chosen == null) return '';
+        const t = T[chosen];
+        return `<details class="memo"><summary>あなたが選んだ映画館：<b>${esc(t.n)}</b>（設備を見る）</summary>
+      ${detailHTML(t)}
+      <button class="link" id="unchoose">選択を解除</button></details>`;
       }
 
       function factsHTML(t) {
@@ -404,6 +467,7 @@
         <button class="link" id="undo" ${state.history.length ? '' : 'disabled'}>← 最後の回答を取り消す</button>
         <button class="link" id="restart">最初から</button>
       </div>
+      ${memoHTML()}
       ${candidatesHTML(w)}
     </div>`;
         document.getElementById('yes').onclick = () => renderWin(i);
@@ -469,6 +533,7 @@
       }
 
       function bindTools() {
+        const c = document.getElementById('unchoose'); if (c) c.onclick = () => { chosen = null; c.closest('.memo').remove(); };
         const u = document.getElementById('undo'); if (u) u.onclick = undo;
         const r = document.getElementById('restart'); if (r) r.onclick = reset;
       }
@@ -479,6 +544,22 @@
       const opt = document.getElementById('nochain');
       opt.checked = noChainPref;
       opt.onchange = () => { noChainPref = opt.checked; opt.blur(); reset(); };
+
+      // 映画館を検索して設備を確認 → そのまま開始
+      const pick = document.getElementById('pick'), pickRes = document.getElementById('pickResults');
+      const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s・･]/g, '');
+      const showPick = () => {
+        const s = norm(pick.value);
+        const hits = s ? T.map((t, i) => ({ t, i })).filter(x => norm(x.t.n + x.t.p + x.t.c).includes(s)).slice(0, 40) : [];
+        pickRes.innerHTML = hits.map(x => `<button data-i="${x.i}">${esc(x.t.n)}<small>${esc(x.t.p)}・${x.t.sc ?? '?'}スクリーン</small></button>`).join('')
+          || (s ? '<small style="color:var(--sub);padding:8px 12px">見つかりませんでした</small>' : '');
+        pickRes.querySelectorAll('[data-i]').forEach(b => b.onclick = () => {
+          pick.value = ''; pickRes.innerHTML = ''; pick.blur(); renderDetail(+b.dataset.i);
+        });
+      };
+      pick.oninput = showPick;
+      pick.onkeydown = e => { if (e.key === 'Escape') { pick.value = ''; showPick(); pick.blur(); } };
+      document.addEventListener('click', e => { if (!e.target.closest('.pick')) pickRes.innerHTML = ''; });
 
       document.addEventListener('keydown', e => {
         if (state.mode !== 'ask' || e.target.type === 'text' || e.target.id === 'search') return;
