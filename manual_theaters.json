@@ -29,6 +29,7 @@
      "width": 11.9,
      "wheelchair": null,
      "formats": [
+      "HDCS",
       "4DX"
      ]
     },
@@ -51,7 +52,9 @@
      "seats": 460,
      "width": 15.6,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン7",
@@ -65,7 +68,9 @@
      "seats": 174,
      "width": 9.9,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     }
    ]
   },
@@ -82,7 +87,9 @@
      "seats": 418,
      "width": 15.4,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン2",
@@ -110,14 +117,18 @@
      "seats": 112,
      "width": 11.7,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン6",
      "seats": 291,
      "width": 13.8,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン7",
@@ -162,42 +173,54 @@
      "seats": 151,
      "width": 7.8,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン3",
      "seats": 317,
      "width": 10.5,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン4",
      "seats": 151,
      "width": 7.8,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン5",
      "seats": 95,
      "width": 7.7,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン6",
      "seats": 95,
      "width": 7.7,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン7",
      "seats": 217,
      "width": 9.5,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン8",
@@ -211,28 +234,36 @@
      "seats": 188,
      "width": 10.2,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン10",
      "seats": 238,
      "width": 10.5,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン11",
      "seats": 251,
      "width": 9.5,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン12",
      "seats": 238,
      "width": 10.5,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "FLEXOUND"
+     ]
     },
     {
      "name": "スクリーン13",
@@ -369,14 +400,18 @@
      "seats": 271,
      "width": 11.9,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン8",
      "seats": 271,
      "width": 11.9,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "HDCS"
+     ]
     },
     {
      "name": "スクリーン9",
@@ -1254,7 +1289,9 @@
      "seats": 532,
      "width": 15.4,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "LIVE ZOUND"
+     ]
     },
     {
      "name": "CINE9",
@@ -1282,7 +1319,9 @@
      "seats": 488,
      "width": 15.7,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "LIVEサウンド"
+     ]
     }
    ]
   },
@@ -1299,7 +1338,9 @@
      "seats": 316,
      "width": 13.55,
      "wheelchair": 2,
-     "formats": []
+     "formats": [
+      "Auro"
+     ]
     },
     {
      "name": "シアター2",
@@ -1702,7 +1743,9 @@
      "seats": 364,
      "width": null,
      "wheelchair": null,
-     "formats": []
+     "formats": [
+      "Meta Sound"
+     ]
     }
    ]
   },
@@ -2171,7 +2214,109 @@
   "addFormats": {
    "TOHOシネマズ 熊本サクラマチ": [
     "DTS:X"
+   ],
+   "イオンシネマ江釣子": [
+    "DTSサラウンド・シネマ"
+   ],
+   "イオンシネマ八王子滝山": [
+    "DTSサラウンド・シネマ"
+   ],
+   "イオンシネマ津田沼South": [
+    "DTSサラウンド・シネマ"
+   ],
+   "イオンシネマ須坂": [
+    "DTSサラウンド・シネマ"
    ]
+  },
+  "addScreenFormats": {
+   "ローソン・ユナイテッドシネマ 長崎": {
+    "スクリーン2": [
+     "THX"
+    ]
+   },
+   "ユナイテッド・シネマ 稲沢": {
+    "スクリーン1": [
+     "THX"
+    ]
+   },
+   "ポレポレシネマズいわき小名浜": {
+    "SCREEN 1": [
+     "Auro"
+    ]
+   },
+   "イオンシネマ座間": {
+    "スクリーン1": [
+     "VSound"
+    ]
+   },
+   "イオンシネマ徳島": {
+    "スクリーン1": [
+     "VSound"
+    ]
+   },
+   "イオンシネマ小樽": {
+    "スクリーン7": [
+     "THX"
+    ]
+   },
+   "イオンシネマ大宮": {
+    "スクリーン1": [
+     "THX"
+    ]
+   },
+   "イオンシネマ近江八幡": {
+    "スクリーン8": [
+     "THX"
+    ]
+   },
+   "イオンシネマ茨木": {
+    "スクリーン7": [
+     "THX"
+    ]
+   },
+   "イオンシネマ戸畑": {
+    "スクリーン3": [
+     "THX"
+    ]
+   },
+   "ローソン・ユナイテッドシネマ みなとみらい": {
+    "スクリーン1": [
+     "FLEXOUND"
+    ],
+    "スクリーン2": [
+     "FLEXOUND"
+    ],
+    "スクリーン3": [
+     "FLEXOUND"
+    ],
+    "スクリーン4": [
+     "FLEXOUND"
+    ],
+    "スクリーン5": [
+     "FLEXOUND"
+    ],
+    "スクリーン6": [
+     "FLEXOUND"
+    ],
+    "スクリーン7": [
+     "FLEXOUND"
+    ],
+    "スクリーン8": [
+     "FLEXOUND"
+    ],
+    "スクリーン9": [
+     "FLEXOUND"
+    ],
+    "スクリーン10": [
+     "FLEXOUND"
+    ],
+    "スクリーン11": [
+     "FLEXOUND"
+    ],
+    "スクリーン12": [
+     "FLEXOUND"
+    ]
+   }
   },
   "split": {},
   "merge": {

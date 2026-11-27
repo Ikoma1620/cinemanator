@@ -68,6 +68,18 @@
     }
     .meta { display: flex; justify-content: space-between; align-items: center; color: var(--sub); font-size: 14px; margin-bottom: 10px }
     .meta .num { font-weight: 700; color: var(--ink) }
+    /* ---- モード選択（最初の画面） ---- */
+    .mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px }
+    .mode-card { display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 18px 18px 16px; border-radius: 14px }
+    .mode-card b { font-size: 19px; color: var(--accent) }
+    .mode-card span { color: var(--sub); font-size: 14px; line-height: 1.6 }
+    .mode-card ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 14px; line-height: 1.7 }
+    .mode-card:hover { border-color: var(--accent) }
+    .q:has(+ .mode-cards) { min-height: 0; margin-bottom: 14px }
+    @media (max-width: 600px) { .mode-cards { grid-template-columns: 1fr } }
+    .modebar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; color: var(--sub); font-size: 14px }
+    .modebar:empty { display: none }
+    .modebar b { color: var(--accent) }
     .badge { font-size: 12px; color: var(--accent); border: 1px solid #6a5426; border-radius: 999px; padding: 2px 10px }
     .bar { height: 6px; background: var(--raise); border-radius: 3px; overflow: hidden; margin-bottom: 26px }
     .bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .35s }
@@ -132,6 +144,12 @@
     .pick-results button { text-align: left; font-size: 15px; padding: 10px 12px; border: none; background: none; display: flex; justify-content: space-between; gap: 10px }
     .pick-results button:hover { background: var(--raise-hi) }
     .pick-results small { color: var(--sub); flex: none }
+    .q:has(+ .qnote) { margin-bottom: 8px; min-height: 0 }
+    .qnote { color: var(--sub); font-size: 13px; line-height: 1.6; margin: 0 0 20px }
+    .qnote:has(+ .qlist) { margin-bottom: 8px }
+    .qlist { margin: 0 0 20px; padding: 0; border: none; font-size: 13px }
+    .qlist summary { color: var(--accent) }
+    .qlist .tags { margin: 10px 0 0 }
     .hint { color: var(--sub); font-size: 14px; margin: 0 0 12px }
     a.official { display: block; text-align: center; padding: 13px 16px; margin: 0 0 18px; border: 1.5px solid var(--accent); border-radius: 12px; color: var(--accent); font-weight: 700; text-decoration: none }
     a.official:hover { background: #2a2218 }
@@ -143,6 +161,7 @@
       body { padding: 22px 12px 40px }
       h1 { font-size: 26px }
       .modes { grid-template-columns: 1fr }
+      .mode-cards { grid-template-columns: 1fr }
       .stage { padding: 22px 18px 18px }
       .q { font-size: 22px; min-height: 66px }
       .answers.c5 { grid-template-columns: 1fr }
@@ -158,12 +177,7 @@
       <h1>シネマネーター</h1>
       <p>全国の映画館をひとつ思い浮かべてください。質問に答えるだけで当ててみせます。</p>
     </header>
-    <section class="modes" aria-label="モード">
-      <label class="mode"><input type="checkbox" id="fast"><span class="switch"></span>
-        <span><b>スピードモード</b><small>はい・わからない・いいえの3択。正しく答える前提で最短で当てます</small></span></label>
-      <label class="mode"><input type="checkbox" id="nochain"><span class="switch"></span>
-        <span><b>チェーン名・都道府県を聞かない</b><small>設備・座席・地方だけで推理します</small></span></label>
-    </section>
+    <div class="modebar" id="modebar"></div>
     <div class="pick">
       <input class="search" id="pick" placeholder="映画館の設備を調べる（例：新宿）" autocomplete="off" aria-label="映画館を検索">
       <div class="pick-results" id="pickResults"></div>
@@ -221,10 +235,21 @@
         return UNRELIABLE_NO.has(f) && !chainHas[t.c]?.has(f) ? null : false;
       });
       // D-BOX・プレミアムシアターは座席に関するものなので「特別なスクリーン」とは別に聞く
-      const SEAT_FORMATS = new Set(['D-BOX', 'プレミアムシアター']);
+      const SEAT_FORMATS = new Set(['D-BOX', 'FLEXOUND', 'VSound', 'グランシアター', 'PREMIER']);
       add('f:any', 'facility', 'B', '特別なスクリーンはありますか？', t => t.f.some(f => !SEAT_FORMATS.has(f)));
-      add('seat:any', 'facility', 'B', 'D-BOXやプレミアムシアターなど、特別な座席のスクリーンはありますか？', t => t.f.some(f => SEAT_FORMATS.has(f)));
+      add('seat:any', 'facility', 'B', 'D-BOXなど、特別な座席のスクリーンはありますか？', t => t.f.some(f => SEAT_FORMATS.has(f)));
       for (const n of [2, 3]) add('sp:' + n, 'facility', 'C', `特別なスクリーンは${n}つ以上ありますか？`, t => over(t.sp, n));
+      // 「特別なスクリーン」の範囲がまぎらわしいので、質問の下に注意書きを出す
+      const SPECIAL_NOTE = '※ IMAX・ドルビーシネマ・4DX・LIVE ZOUND・HDCS など、名前（ブランド）のついた映像・音響のスクリーンが対象です。VIVE・JBL・Meyer などのスピーカーを使っているだけのスクリーンや、D-BOX などの座席は含みません。1つのスクリーンに複数あっても1つと数えます。';
+      // 対象になるものの一覧（質問の下で任意に開ける）。データに出てくるものを、よく知られた順に並べる
+      const allFormats = [...new Set([...FORMATS, ...T.flatMap(t => t.f)])].filter(f => T.some(t => t.f.includes(f)));
+      const SPECIAL_LIST = allFormats.filter(f => !SEAT_FORMATS.has(f));
+      const SEAT_LIST = allFormats.filter(f => SEAT_FORMATS.has(f));
+      for (const q of Q) if (q.id === 'f:any' || q.id.startsWith('sp:')) { q.note = SPECIAL_NOTE; q.list = SPECIAL_LIST; }
+      Object.assign(Q.find(q => q.id === 'seat:any'), {
+        note: '※ D-BOX（動く座席）・FLEXOUND（座席内蔵スピーカー）・VSound（振動する座席）・グランシアター・PREMIER（高級シートの小部屋）など、座席に特徴のあるスクリーンが対象です。',
+        list: SEAT_LIST,
+      });
       for (const n of [6, 8, 10, 12, 14]) add('sc:' + n, 'number', 'B', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
       for (const n of [1000, 1500, 2000, 2500]) add('st:' + n, 'number', 'C', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
       for (const n of [300, 400, 500]) add('mx:' + n, 'number', 'C', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
@@ -260,8 +285,17 @@
         { v: -1, label: 'いいえ', key: '3' },
       ];
       const params = new URLSearchParams(location.search);
-      let fast = params.get('fast') !== '0';   // 既定でオン（?fast=0 でオフ）
-      let ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL;
+      // モード（最初の画面で選ぶ。?mode=fast / ?mode=relaxed で最初の画面を飛ばせる）
+      //   最速モード  : 3択・全部正しく答える前提。チェーン名・都道府県は聞かない
+      //   じっくりモード: 5段階・答え間違いOK。チェーン名・都道府県は
+      //                   設備などで絞りきれないとき／「わからない」が多いときだけ聞く
+      const MODES = {
+        fast: { name: '最速モード' },
+        relaxed: { name: 'じっくりモード' },
+      };
+      let mode = MODES[params.get('mode')] ? params.get('mode') : null;
+      let fast = true, relaxed = false;
+      let ANSWERS = ANSWERS_FAST;
       // 方針：
       //  ・回答と食い違った館は、質問の答えやすさ（tier）に応じて重みを下げる。
       //    A（誰でも分かる）で食い違えばほぼ除外、C（数値など）なら「たぶん違う」程度。
@@ -275,7 +309,17 @@
       const WEAK_MISS = { A: 0.3, B: 0.4, C: 0.6, D: 0.6 };   // たぶん〜 と食い違ったときの重み
       const PRIORITY = { region: 0.8, facility: 1, number: 1.3, chain: 0.2, pref: 0.2, fine: 0.1 };
       // true にするとチェーン名・都道府県を一切聞かない
-      let noChainPref = params.get('nochain') !== '0';   // 既定でオン（?nochain=0 でオフ）
+      let noChainPref = true;
+      // じっくりモードで「わからない」がこの数以上になったら、チェーン名・都道府県も聞く
+      const UNKNOWN_LIMIT = 3;
+      function setMode(m) {
+        mode = m;
+        fast = m === 'fast';
+        relaxed = m === 'relaxed';
+        noChainPref = m === 'fast';
+        ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL;
+      }
+      if (mode) setMode(mode);
       const PRUNE = 0.02, CONFIDENT = 0.97;
 
       function likelihood(val, a, tier) {
@@ -285,9 +329,11 @@
         return Math.abs(a) === 1 ? MISS[tier] : WEAK_MISS[tier];
       }
 
-      let state;
+      let state = { history: [], rejected: new Set(), guesses: 0, current: null, mode: 'start' };
       function reset() {
         state = { history: [], rejected: new Set(), guesses: 0, current: null, mode: 'ask' };
+        if (!mode) return renderStart();
+        renderModebar();
         next();
       }
       // 有力候補だけを残して正規化した重みを返す（それ以外は0）
@@ -307,7 +353,8 @@
       function entropy(w) { let e = 0; for (const x of w) e += H(x); return e; }
 
       // 有力候補を分けられる質問のうち「期待情報量 × 答えやすさ」が最大のものを選ぶ。
-      function bestQuestion(w) {
+      // allowChainPref: チェーン名・都道府県の質問も候補にするか
+      function bestQuestion(w, allowChainPref = !noChainPref) {
         // 同じ文面の質問（C と D の同じ閾値、地方と県の「北海道」など）は二度聞かない
         const asked = new Set(state.history.map(h => Q[h.q].text));
         const idx = []; for (let i = 0; i < w.length; i++) if (w[i] > 0) idx.push(i);
@@ -315,7 +362,8 @@
         let best = -1, bestScore = 1e-9;
         Q.forEach((q, qi) => {
           if (asked.has(q.text)) return;
-          if (noChainPref && (q.kind === 'chain' || q.kind === 'pref')) return;
+          const isCP = q.kind === 'chain' || q.kind === 'pref';
+          if (isCP && (noChainPref || !allowChainPref)) return;
           const vals = idx.map(i => q.test(T[i]));
           if (!vals.includes(true) || !vals.includes(false)) return;   // 候補を分けられない
           let mass = 0, exp = 0;
@@ -325,7 +373,9 @@
             exp += s * entropy(nw.map(x => x / s)); mass += s;
           }
           // スピードモードは答えやすさを気にせず、いちばん絞り込める質問を選ぶ
-          const score = (e0 - exp / mass) * (fast ? 1 : PRIORITY[q.kind]);
+          // じっくりモードでチェーン名・都道府県を聞く段階では、それを優先する
+          const pri = fast ? 1 : (relaxed && isCP) ? 1.5 : PRIORITY[q.kind];
+          const score = (e0 - exp / mass) * pri;
           if (score > bestScore) { bestScore = score; best = qi; }
         });
         return best;
@@ -340,7 +390,16 @@
         if (n >= 30) return -1;
         // スピードモード：矛盾のない館が1つになる（＝分けられる質問がない）まで聞く
         if (fast) return bestQuestion(w);
-        let qi = top.p < CONFIDENT ? bestQuestion(w) : -1;
+        let qi = top.p < CONFIDENT ? bestQuestion(w, !relaxed && !noChainPref) : -1;
+        // じっくりモード：設備などでは絞りきれない（もう分けられない／細かい数値しか残っていない）、
+        // または「わからない」が多いときだけ、チェーン名・都道府県も聞く
+        if (relaxed && top.p < CONFIDENT) {
+          const unknowns = state.history.filter(h => h.a === 0).length;
+          if (qi < 0 || Q[qi].kind === 'fine' || unknowns >= UNKNOWN_LIMIT) {
+            const q2 = bestQuestion(w, true);
+            if (q2 >= 0) qi = q2;
+          }
+        }
         // 細かい数値（D）でしか分けられない段階では、答えが曖昧になりがちなので
         // ある程度抜けていれば当てにいき、外れたら次の候補へ（延々と数字を聞き続けない）
         if (qi >= 0 && Q[qi].kind === 'fine' && (top.p >= 0.75 || n >= 25)) qi = -1;
@@ -388,9 +447,12 @@
         const top = ranked(w)[0].p;
         stage.innerHTML = `
     <div class="fade">
-      <div class="meta"><span class="num">質問 ${n}</span>${fast ? '<span class="badge">スピード</span>' : ''}<span>確信度 ${(top * 100).toFixed(0)}%</span></div>
+      <div class="meta"><span class="num">質問 ${n}</span><span class="badge">${MODES[mode].name}</span><span>確信度 ${(top * 100).toFixed(0)}%</span></div>
       <div class="bar"><i style="width:${top * 100}%"></i></div>
       <p class="q">${esc(Q[qi].text)}</p>
+      ${Q[qi].note ? `<p class="qnote">${esc(Q[qi].note)}</p>` : ''}
+      ${Q[qi].list ? `<details class="qlist"><summary>対象になるものの一覧を見る（${Q[qi].list.length}種類）</summary>
+        <div class="tags">${Q[qi].list.map(f => `<span>${esc(FORMAT_LABEL[f] ? FORMAT_LABEL[f].replace(/（.*）/, '') : f)}</span>`).join('')}</div></details>` : ''}
       <div class="answers c${ANSWERS.length}" style="--cols:${ANSWERS.length}">
         ${ANSWERS.map(a => `<button data-a="${a.v}" class="${a.v > 0 ? 'yes' : a.v < 0 ? 'no' : ''}">${a.label}<kbd>${a.key}</kbd></button>`).join('')}
       </div>
@@ -407,6 +469,31 @@
       // 設備はこの画面には出さず、公式の設備ページを別タブで開いて確認してもらう
       const officialLink = (t, label) => `<a class="official" href="${esc(t.u)}" target="_blank" rel="noopener">${label} ↗</a>`;
 
+      function renderStart() {
+        state.mode = 'start';
+        renderModebar();
+        stage.innerHTML = `
+    <div class="fade">
+      <p class="q">モードを選んでください</p>
+      <div class="mode-cards">
+        <button class="mode-card" data-m="fast"><b>最速モード</b>
+          <span>できるだけ少ない質問で当てます。</span>
+          <ul><li>はい・わからない・いいえの3択</li><li>全部正しく答える前提</li><li>チェーン名・都道府県は聞きません</li></ul></button>
+        <button class="mode-card" data-m="relaxed"><b>じっくりモード</b>
+          <span>あいまいな答えや多少の間違いがあっても当てにいきます。</span>
+          <ul><li>「たぶんそう」なども選べる5段階</li><li>答え間違いがあっても大丈夫</li><li>絞りきれないときや「わからない」が多いときだけ、チェーン名・都道府県を聞きます</li></ul></button>
+      </div>
+    </div>`;
+        stage.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { setMode(b.dataset.m); reset(); });
+      }
+
+      function renderModebar() {
+        const bar = document.getElementById('modebar');
+        if (!mode || state.mode === 'start') { bar.innerHTML = ''; return; }
+        bar.innerHTML = `<span><b>${MODES[mode].name}</b>で遊んでいます</span><button class="link" id="changeMode">モードを変える</button>`;
+        document.getElementById('changeMode').onclick = () => { mode = null; reset(); };
+      }
+
       function renderDetail(i) {
         const t = T[i];
         state.mode = 'detail';
@@ -422,7 +509,7 @@
       </div>
     </div>`;
         // 閉じたら選んだ映画館の情報は残さず、元の画面（質問など）に戻る
-        document.getElementById('close').onclick = () => next();
+        document.getElementById('close').onclick = () => mode ? next() : renderStart();
       }
 
 
@@ -520,12 +607,6 @@
         const r = document.getElementById('restart'); if (r) r.onclick = reset;
       }
 
-      const fastOpt = document.getElementById('fast');
-      fastOpt.checked = fast;
-      fastOpt.onchange = () => { fast = fastOpt.checked; ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL; fastOpt.blur(); reset(); };
-      const opt = document.getElementById('nochain');
-      opt.checked = noChainPref;
-      opt.onchange = () => { noChainPref = opt.checked; opt.blur(); reset(); };
 
       // 映画館を検索して設備を確認 → そのまま開始
       const pick = document.getElementById('pick'), pickRes = document.getElementById('pickResults');

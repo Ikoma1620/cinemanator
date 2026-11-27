@@ -14,7 +14,29 @@ fixes = manual["fixes"]
 
 
 # 座席に関するもの（スクリーンの種類ではない）。「特別なスクリーン」の数には入れない
-SEAT_FORMATS = {"D-BOX", "プレミアムシアター"}
+# 調べた結果：D-BOX（可動シート）・FLEXOUND（座席内蔵スピーカー）・VSound（座席振動）・
+#             グランシアター（リクライニングシートの小部屋）・PREMIER（TOHOのプレミアシートの小部屋）
+# ※ TOHOのプレミアムシアターは「スクリーン・音響・シート」の3つを備えた上位シアターなので特別なスクリーン側
+SEAT_FORMATS = {"D-BOX", "FLEXOUND", "VSound", "グランシアター", "PREMIER"}
+
+# 劇場独自・ブランド名のついた音響やスクリーン（スクリーン名・音響欄の文字から拾う）
+# ※ VIVE・JBL（Sculpted Surround）・Meyer などスピーカーのメーカー名・製品名だけのものは「特別なスクリーン」に含めない
+BRANDS = [
+    (r"LIVE ZOUND", "LIVE ZOUND"), (r"LIVEサウンド", "LIVEサウンド"),
+    (r"HDCS", "HDCS"), (r"\bTHX\b", "THX"), (r"T-LEX", "T-LEX"), (r"ADMIX", "ADMIX"),
+    (r"アメイジング・サウンドシアター", "アメイジング・サウンドシアター"),
+    (r"雷舞", "雷舞-LIVE-"), (r"APOLLO PREMIUM SOUND", "APOLLO PREMIUM SOUND SYSTEM"),
+    (r"\bsola\b", "sola"),
+    (r"(?i)auro", "Auro"), (r"Meta Sound", "Meta Sound"), (r"(?i)v ?sound", "VSound"),
+    # 座席に関するもの
+    (r"FLEXOUND", "FLEXOUND"), (r"グランシアター", "グランシアター"), (r"^PREMIER$", "PREMIER"),
+]
+
+
+def brand_formats(x):
+    import re
+    texts = [str(x.get(k) or "") for k in ("name", "label", "sound", "sizeText")]
+    return [b for pat, b in BRANDS if any(re.search(pat, t) for t in texts)]
 
 
 def is_special_screen(fs, extra=()):
@@ -53,16 +75,26 @@ def entry(name, chain, pref, url, screens, formats, special=None):
 def from_crawled(t, chain, name=None, scr=None):
     s = t.get("summary") or {}
     scr = scr if scr is not None else (t.get("screens") or [])
-    screens = [{
-        "seats": x.get("seats"),
-        "wheelchair": x.get("wheelchair"),
-        "width": (x.get("size") or {}).get("width"),
-        "formats": x.get("formats") or [],
-    } for x in scr if is_screen(x)]
-    if scr is t.get("screens"):
-        formats = list(s.get("formats") or [])
-    else:  # 分割・統合した館はスクリーンから集計し直す
-        formats = sorted({f for x in screens for f in x["formats"]})
+    add = fixes.get("addScreenFormats", {}).get(name or t["theaterName"], {})
+    screens = []
+    for x in scr:
+        if not is_screen(x):
+            continue
+        fs = list(x.get("formats") or [])
+        for f in brand_formats(x) + add.get(x["name"], []):
+            if f not in fs:
+                fs.append(f)
+        screens.append({
+            "seats": x.get("seats"),
+            "wheelchair": x.get("wheelchair"),
+            "width": (x.get("size") or {}).get("width"),
+            "formats": fs,
+        })
+    formats = list(s.get("formats") or []) if scr is t.get("screens") else []
+    for x in screens:  # スクリーンから拾ったブランドも館のフォーマットに入れる
+        for f in x["formats"]:
+            if f not in formats:
+                formats.append(f)
     # スクリーン数・特別なスクリーン数は実際のスクリーンから数える
     # （1つのスクリーンに複数のフォーマットがあっても1つ）
     return entry(name or t["theaterName"], chain, t["prefecture"], t["url"], screens, formats)
