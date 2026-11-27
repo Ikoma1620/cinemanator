@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シネマネーター — あなたの思い浮かべた映画館を当てます</title>
+  <style>
+    :root {
+      --bg: #121014;
+      --panel: #1d1a20;
+      --raise: #27232b;
+      --raise-hi: #312c36;
+      --line: #3a3440;
+      --ink: #f6f1ea;
+      --sub: #c3b8ad;
+      --mute: #8f857c;
+      --accent: #f0b84d;
+      --accent-ink: #1b1408;
+      --yes: #4fb37a;
+      --no: #e0675b;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box }
+    html, body { margin: 0; min-height: 100% }
+    body {
+      background: radial-gradient(ellipse at 50% -20%, #3b2a1c 0%, var(--bg) 55%) fixed;
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.6;
+      display: flex; justify-content: center;
+      padding: 36px 16px 56px;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { width: 100%; max-width: 640px }
+    header { text-align: center; margin-bottom: 22px }
+    h1 { font-size: 32px; letter-spacing: .1em; margin: 0 0 4px; color: var(--accent) }
+    header p { margin: 0; color: var(--sub); font-size: 15px }
+
+    /* ---- モード選択 ---- */
+    .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px }
+    .mode {
+      position: relative; display: flex; gap: 12px; align-items: flex-start;
+      background: var(--panel); border: 1.5px solid var(--line); border-radius: var(--radius);
+      padding: 14px 16px; cursor: pointer; transition: border-color .15s, background .15s;
+    }
+    .mode:hover { border-color: #5a5060 }
+    .mode input { position: absolute; opacity: 0; pointer-events: none }
+    .mode:has(input:checked) { border-color: var(--accent); background: #2a2218 }
+    .mode:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px }
+    .switch {
+      flex: none; width: 40px; height: 24px; border-radius: 999px; background: var(--line);
+      position: relative; margin-top: 2px; transition: background .15s;
+    }
+    .switch::after {
+      content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+      border-radius: 50%; background: var(--ink); transition: transform .15s;
+    }
+    .mode input:checked + .switch { background: var(--accent) }
+    .mode input:checked + .switch::after { transform: translateX(16px); background: var(--accent-ink) }
+    .mode b { display: block; font-size: 15px }
+    .mode small { display: block; color: var(--sub); font-size: 13px; line-height: 1.5; margin-top: 2px }
+
+    /* ---- メイン ---- */
+    .stage {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+      padding: 28px 28px 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    }
+    .meta { display: flex; justify-content: space-between; align-items: center; color: var(--sub); font-size: 14px; margin-bottom: 10px }
+    .meta .num { font-weight: 700; color: var(--ink) }
+    .badge { font-size: 12px; color: var(--accent); border: 1px solid #6a5426; border-radius: 999px; padding: 2px 10px }
+    .bar { height: 6px; background: var(--raise); border-radius: 3px; overflow: hidden; margin-bottom: 26px }
+    .bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .35s }
+    .q { font-size: 26px; line-height: 1.5; font-weight: 700; min-height: 78px; margin: 0 0 24px; text-wrap: pretty }
+
+    button {
+      font: inherit; color: var(--ink); background: var(--raise); border: 1.5px solid var(--line);
+      border-radius: 12px; padding: 14px 16px; cursor: pointer; font-size: 16px;
+      transition: background .15s, border-color .15s, transform .05s;
+    }
+    button:hover { background: var(--raise-hi); border-color: #5a5060 }
+    button:active { transform: translateY(1px) }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+    button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700 }
+    button.primary:hover { background: #f6c76a }
+
+    .answers { display: grid; gap: 10px; grid-template-columns: repeat(var(--cols), 1fr) }
+    .answers button {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      padding: 16px 6px 12px; font-size: 17px; font-weight: 700; text-align: center;
+    }
+    .answers button.yes { border-color: #2f6b49 }
+    .answers button.yes:hover { background: #1f3a2b; border-color: var(--yes) }
+    .answers button.no { border-color: #7a3a33 }
+    .answers button.no:hover { background: #40221f; border-color: var(--no) }
+    .answers.c3 button { font-size: 19px; padding: 20px 8px 14px }
+    kbd { font: 12px ui-monospace, monospace; color: var(--mute); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; font-weight: 400 }
+
+    .row { display: flex; gap: 10px; flex-wrap: wrap }
+    .row > button { flex: 1; text-align: center; font-weight: 700 }
+    .tools { display: flex; justify-content: space-between; margin-top: 18px }
+    .link { background: none; border: none; padding: 6px 0; color: var(--sub); font-size: 14px; text-decoration: underline; text-underline-offset: 3px }
+    .link:hover { background: none; color: var(--ink) }
+    .link:disabled { opacity: .35; cursor: default }
+
+    .guess .label { color: var(--sub); font-size: 15px; margin: 0 0 6px }
+    .guess h2 { font-size: 32px; line-height: 1.35; margin: 0 0 6px; color: var(--accent); text-wrap: balance }
+    .guess .chain { color: var(--sub); margin: 0 0 20px }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 18px }
+    .facts div { background: var(--raise); border-radius: 10px; padding: 12px 8px; text-align: center }
+    .facts b { display: block; font-size: 22px; font-variant-numeric: tabular-nums }
+    .facts span { font-size: 12px; color: var(--sub) }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px }
+    .tags span { font-size: 13px; border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 3px 11px }
+    .guess a { color: var(--accent) }
+
+    details { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--sub); font-size: 14px }
+    summary { cursor: pointer }
+    ol.cands { margin: 8px 0 0; padding-left: 22px }
+    ol.cands li { padding: 4px 0; border-bottom: 1px dashed var(--line) }
+    .pct { float: right; font-variant-numeric: tabular-nums; color: var(--ink) }
+    .search { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--raise); color: var(--ink); margin: 10px 0 }
+    .search:focus { outline: none; border-color: var(--accent) }
+    .search-results { max-height: 260px; overflow: auto; display: grid; gap: 6px }
+    .search-results button { font-size: 15px; padding: 10px 14px; text-align: left }
+    footer { text-align: center; color: var(--mute); font-size: 12px; margin-top: 20px }
+    .fade { animation: fade .25s ease }
+    @keyframes fade { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+
+    @media (max-width: 520px) {
+      body { padding: 22px 12px 40px }
+      h1 { font-size: 26px }
+      .modes { grid-template-columns: 1fr }
+      .stage { padding: 22px 18px 18px }
+      .q { font-size: 22px; min-height: 66px }
+      .answers.c5 { grid-template-columns: 1fr }
+      .answers.c5 button { flex-direction: row; justify-content: center; gap: 10px; padding: 13px }
+      .guess h2 { font-size: 26px }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>シネマネーター</h1>
+      <p>全国の映画館をひとつ思い浮かべてください。質問に答えるだけで当ててみせます。</p>
+    </header>
+    <section class="modes" aria-label="モード">
+      <label class="mode"><input type="checkbox" id="fast"><span class="switch"></span>
+        <span><b>スピードモード</b><small>はい・わからない・いいえの3択。正しく答える前提で最短で当てます</small></span></label>
+      <label class="mode"><input type="checkbox" id="nochain"><span class="switch"></span>
+        <span><b>チェーン名・都道府県を聞かない</b><small>設備・座席・地方だけで推理します</small></span></label>
+    </section>
+    <section class="stage" id="stage" aria-live="polite"></section>
+    <footer>
+      <p id="foot"></p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    (() => {
+      const T = window.THEATERS;
+      const stage = document.getElementById('stage');
+      document.getElementById('foot').textContent =
+        `対象: ${T.length}館（${[...new Set(T.map(t => t.c))].join('・')}）`;
+
+      // ---------- 質問の定義 ----------
+      // test(t) は true / false / null(データなし) を返す
+      const REGIONS = {
+        '北海道': ['北海道'],
+        '東北地方': ['青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県'],
+        '関東地方': ['茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県'],
+        '中部地方': ['新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県'],
+        '近畿地方': ['三重県', '滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県'],
+        '中国地方': ['鳥取県', '島根県', '岡山県', '広島県', '山口県'],
+        '四国地方': ['徳島県', '香川県', '愛媛県', '高知県'],
+        '九州・沖縄地方': ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県'],
+      };
+      const FORMATS = ['IMAX', 'Dolby Cinema', 'Dolby Atmos', '4DX', 'MX4D', 'ScreenX', 'D-BOX', 'TCX', 'ULTIRA', 'BESTIA', 'SAION', 'DTS:X', '轟音シアター', '重震シアター', 'プレミアムシアター'];
+      const FORMAT_LABEL = { 'Dolby Cinema': 'ドルビーシネマ', 'Dolby Atmos': 'ドルビーアトモス' };
+
+      // 各質問の属性
+      //   kind : 質問の種類。PRIORITY で聞く順番の優先度を決める
+      //          （設備・座席・スクリーン・地方を先に、チェーンと都道府県は最後の方）
+      //   tier : 回答／データの確からしさ。食い違ったときにどれだけ候補から外すかを決める
+      //          A = 誰でも答えられる  B = 映画好きなら分かる
+      //          C = 当てずっぽうになりがちな数値・データが不完全  D = 細かい数値（最後の手段）
+      // ※ 館名の文字を使った質問は禁止。館の設備・場所だけで推理する。
+      const Q = [];
+      const add = (id, kind, tier, text, test) => Q.push({ id, kind, tier, text, test });
+      // 数値の閾値質問。データがなければ「不明」。
+      const over = (v, n) => v == null ? null : v >= n;
+      // Dolby Atmos / DTS:X はチェーンによって公式サイトに記載がなく、「なし」が信用できない
+      const chainHas = {};
+      for (const t of T) for (const f of t.f) (chainHas[t.c] ??= new Set()).add(f);
+      const UNRELIABLE_NO = new Set(['Dolby Atmos', 'DTS:X']);
+      const FORMAT_TIER = { 'IMAX': 'A', '4DX': 'A', 'Dolby Cinema': 'A', 'ScreenX': 'A', 'MX4D': 'A', 'Dolby Atmos': 'C', 'DTS:X': 'C' };
+
+      for (const [r, ps] of Object.entries(REGIONS)) add('r:' + r, 'region', 'A', `${r}にありますか？`, t => ps.includes(t.p));
+      for (const f of FORMATS) add('f:' + f, 'facility', FORMAT_TIER[f] || 'B', `${FORMAT_LABEL[f] || f}はありますか？`, t => {
+        if (t.f.includes(f)) return true;
+        return UNRELIABLE_NO.has(f) && !chainHas[t.c]?.has(f) ? null : false;
+      });
+      add('f:any', 'facility', 'B', '特別なスクリーンはありますか？', t => t.f.length > 0);
+      for (const n of [2, 3]) add('sp:' + n, 'facility', 'C', `特別なスクリーンは${n}つ以上ありますか？`, t => over(t.sp, n));
+      for (const n of [6, 8, 10, 12, 14]) add('sc:' + n, 'number', 'B', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
+      for (const n of [1000, 1500, 2000, 2500]) add('st:' + n, 'number', 'C', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
+      for (const n of [300, 400, 500]) add('mx:' + n, 'number', 'C', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
+      for (const n of [18, 20]) add('w:' + n, 'number', 'C', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
+      // 細かい数値：数字しか違わない館どうしを分けるための最後の手段
+      for (let n = 2; n <= 18; n++) if (![6, 8, 10, 12, 14].includes(n)) add('scD:' + n, 'fine', 'D', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
+      for (let n = 400; n <= 3000; n += 100) if (n % 500) add('stD:' + n, 'fine', 'D', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
+      for (let n = 150; n <= 550; n += 25) if (n % 100) add('mxD:' + n, 'fine', 'D', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
+      for (let n = 12; n <= 20; n += 1) if (n !== 18 && n !== 20) add('wD:' + n, 'fine', 'D', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
+      // チェーン・都道府県は最後の方（「チェーン・都道府県を聞かない」モードでは使わない）
+      for (const c of new Set(T.map(t => t.c))) add('c:' + c, 'chain', 'A', `${c}ですか？`, t => t.c === c);
+      for (const p of new Set(T.map(t => t.p))) add('p:' + p, 'pref', 'A', `${p}にありますか？`, t => t.p === p);
+
+      // ---------- 推論 ----------
+      // 回答: 1=はい 0.5=たぶんそう 0=わからない -0.5=たぶん違う -1=いいえ
+      const ANSWERS_FULL = [
+        { v: 1, label: 'はい', key: '1' },
+        { v: 0.5, label: 'たぶんそう', key: '2' },
+        { v: 0, label: 'わからない', key: '3' },
+        { v: -0.5, label: 'たぶん違う', key: '4' },
+        { v: -1, label: 'いいえ', key: '5' },
+      ];
+      // スピードモード：3択。回答はすべて正しい前提なので、食い違った館は即除外
+      const ANSWERS_FAST = [
+        { v: 1, label: 'はい', key: '1' },
+        { v: 0, label: 'わからない', key: '2' },
+        { v: -1, label: 'いいえ', key: '3' },
+      ];
+      const params = new URLSearchParams(location.search);
+      let fast = params.get('fast') !== '0';   // 既定でオン（?fast=0 でオフ）
+      let ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL;
+      // 方針：
+      //  ・回答と食い違った館は、質問の答えやすさ（tier）に応じて重みを下げる。
+      //    A（誰でも分かる）で食い違えばほぼ除外、C（数値など）なら「たぶん違う」程度。
+      //    データなし（null）は食い違い扱いしない。
+      //  ・有力候補（トップの2%以上の重み）の中でトップが97%以上を占めるまで質問を続ける。
+      //    → 食い違いゼロの館が他に残っていれば絶対に当てにいかない。
+      //    → 数値問題の答えだけで差がついている館同士は、答えやすい質問で確かめてから当てる。
+      //  ・質問は「絞り込める量 × 種類ごとの優先度」で選ぶ。
+      //    設備・座席・スクリーン・地方 → チェーン・都道府県 → 細かい数値 の順になる。
+      const MISS = { A: 0.002, B: 0.05, C: 0.2, D: 0.15 };    // はい/いいえ と食い違ったときの重み
+      const WEAK_MISS = { A: 0.3, B: 0.4, C: 0.6, D: 0.6 };   // たぶん〜 と食い違ったときの重み
+      const PRIORITY = { region: 0.8, facility: 1, number: 1.3, chain: 0.2, pref: 0.2, fine: 0.1 };
+      // true にするとチェーン名・都道府県を一切聞かない
+      let noChainPref = params.get('nochain') !== '0';   // 既定でオン（?nochain=0 でオフ）
+      const PRUNE = 0.02, CONFIDENT = 0.97;
+
+      function likelihood(val, a, tier) {
+        if (val === null || a === 0) return 1;
+        if ((val ? 1 : -1) * a > 0) return 1;
+        if (fast) return 0;
+        return Math.abs(a) === 1 ? MISS[tier] : WEAK_MISS[tier];
+      }
+
+      let state;
+      function reset() {
+        state = { history: [], rejected: new Set(), guesses: 0, current: null, mode: 'ask' };
+        next();
+      }
+      // 有力候補だけを残して正規化した重みを返す（それ以外は0）
+      function evaluate() {
+        const w = T.map((t, i) => state.rejected.has(i) ? 0 : 1);
+        for (const h of state.history) {
+          const q = Q[h.q];
+          for (let i = 0; i < T.length; i++) if (w[i]) w[i] *= likelihood(q.test(T[i]), h.a, q.tier);
+        }
+        const top = Math.max(...w);
+        if (top <= 0) return { w };
+        const kept = w.map(x => x >= top * PRUNE ? x : 0);
+        const s = kept.reduce((a, b) => a + b, 0);
+        return { w: kept.map(x => x / s) };
+      }
+      const H = p => p > 0 ? -p * Math.log2(p) : 0;
+      function entropy(w) { let e = 0; for (const x of w) e += H(x); return e; }
+
+      // 有力候補を分けられる質問のうち「期待情報量 × 答えやすさ」が最大のものを選ぶ。
+      function bestQuestion(w) {
+        // 同じ文面の質問（C と D の同じ閾値、地方と県の「北海道」など）は二度聞かない
+        const asked = new Set(state.history.map(h => Q[h.q].text));
+        const idx = []; for (let i = 0; i < w.length; i++) if (w[i] > 0) idx.push(i);
+        const e0 = entropy(idx.map(i => w[i]));
+        let best = -1, bestScore = 1e-9;
+        Q.forEach((q, qi) => {
+          if (asked.has(q.text)) return;
+          if (noChainPref && (q.kind === 'chain' || q.kind === 'pref')) return;
+          const vals = idx.map(i => q.test(T[i]));
+          if (!vals.includes(true) || !vals.includes(false)) return;   // 候補を分けられない
+          let mass = 0, exp = 0;
+          for (const a of [1, -1]) {
+            const nw = idx.map((i, k) => w[i] * likelihood(vals[k], a, q.tier));
+            const s = nw.reduce((x, y) => x + y, 0);
+            exp += s * entropy(nw.map(x => x / s)); mass += s;
+          }
+          // スピードモードは答えやすさを気にせず、いちばん絞り込める質問を選ぶ
+          const score = (e0 - exp / mass) * (fast ? 1 : PRIORITY[q.kind]);
+          if (score > bestScore) { bestScore = score; best = qi; }
+        });
+        return best;
+      }
+
+      function ranked(w) {
+        return w.map((p, i) => ({ p, i })).filter(x => x.p > 0).sort((a, b) => b.p - a.p);
+      }
+
+      // 次に聞く質問の番号を返す。-1 なら当てにいく
+      function decide(w, top, n) {
+        if (n >= 30) return -1;
+        // スピードモード：矛盾のない館が1つになる（＝分けられる質問がない）まで聞く
+        if (fast) return bestQuestion(w);
+        let qi = top.p < CONFIDENT ? bestQuestion(w) : -1;
+        // 細かい数値（D）でしか分けられない段階では、答えが曖昧になりがちなので
+        // ある程度抜けていれば当てにいき、外れたら次の候補へ（延々と数字を聞き続けない）
+        if (qi >= 0 && Q[qi].kind === 'fine' && (top.p >= 0.75 || n >= 25)) qi = -1;
+        // トップが十分抜けた or もう候補を分けられる質問がない時だけ当てにいく
+        return qi;
+      }
+
+      function next() {
+        const { w } = evaluate();
+        const r = ranked(w);
+        const n = state.history.length;
+        if (!r.length) { return renderGiveUp(); }
+        const top = r[0];
+        const qi = decide(w, top, n);
+        if (qi < 0) {
+          if (state.guesses >= 5) return renderGiveUp();
+          state.mode = 'guess'; state.current = top.i;
+          return renderGuess(top.i, top.p, w);
+        }
+        state.mode = 'ask'; state.current = qi;
+        renderQuestion(qi, w);
+      }
+
+      function answer(v) {
+        state.history.push({ q: state.current, a: v });
+        next();
+      }
+      function undo() {
+        if (!state.history.length) return;
+        state.history.pop();
+        next();
+      }
+
+      // ---------- 描画 ----------
+      const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+      function candidatesHTML(w, k = 8) {
+        const r = ranked(w).slice(0, k);
+        return `<details><summary>いま考えている候補（${ranked(w).length}館）</summary>
+    <ol class="cands">${r.map(x => `<li>${esc(T[x.i].n)}<span class="pct">${(x.p * 100).toFixed(1)}%</span></li>`).join('')}</ol></details>`;
+      }
+
+      function renderQuestion(qi, w) {
+        const n = state.history.length + 1;
+        const top = ranked(w)[0].p;
+        stage.innerHTML = `
+    <div class="fade">
+      <div class="meta"><span class="num">質問 ${n}</span>${fast ? '<span class="badge">スピード</span>' : ''}<span>確信度 ${(top * 100).toFixed(0)}%</span></div>
+      <div class="bar"><i style="width:${top * 100}%"></i></div>
+      <p class="q">${esc(Q[qi].text)}</p>
+      <div class="answers c${ANSWERS.length}" style="--cols:${ANSWERS.length}">
+        ${ANSWERS.map(a => `<button data-a="${a.v}" class="${a.v > 0 ? 'yes' : a.v < 0 ? 'no' : ''}">${a.label}<kbd>${a.key}</kbd></button>`).join('')}
+      </div>
+      <div class="tools">
+        <button class="link" id="undo" ${state.history.length ? '' : 'disabled'}>← ひとつ前に戻る</button>
+        <button class="link" id="restart">最初から</button>
+      </div>
+      ${candidatesHTML(w)}
+    </div>`;
+        stage.querySelectorAll('[data-a]').forEach(b => b.onclick = () => answer(parseFloat(b.dataset.a)));
+        bindTools();
+      }
+
+      function factsHTML(t) {
+        return `<div class="facts">
+      <div><b>${t.sc ?? '—'}</b><span>スクリーン</span></div>
+      <div><b>${t.st ? t.st.toLocaleString() : '—'}</b><span>総座席</span></div>
+      <div><b>${t.mx ?? '—'}</b><span>最大スクリーン席数</span></div>
+    </div>
+    ${t.f.length ? `<div class="tags">${t.f.map(f => `<span>${esc(f)}</span>`).join('')}</div>` : ''}`;
+      }
+
+      function renderGuess(i, p, w) {
+        const t = T[i];
+        stage.innerHTML = `
+    <div class="fade guess">
+      <p class="label">${state.history.length}問で考えました。あなたが思い浮かべているのは…</p>
+      <h2>${esc(t.n)}</h2>
+      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}　（確信度 ${(p * 100).toFixed(0)}%）</p>
+      ${factsHTML(t)}
+      <div class="row">
+        <button class="primary" id="yes">正解！</button>
+        <button id="no">違う、まだ続けて</button>
+      </div>
+      <div class="tools">
+        <button class="link" id="undo" ${state.history.length ? '' : 'disabled'}>← 最後の回答を取り消す</button>
+        <button class="link" id="restart">最初から</button>
+      </div>
+      ${candidatesHTML(w)}
+    </div>`;
+        document.getElementById('yes').onclick = () => renderWin(i);
+        document.getElementById('no').onclick = () => { state.rejected.add(i); state.guesses++; next(); };
+        bindTools();
+      }
+
+      function renderWin(i) {
+        const t = T[i];
+        stage.innerHTML = `
+    <div class="fade guess">
+      <p class="label">やった！ ${state.history.length}問で当てました 🎬</p>
+      <h2>${esc(t.n)}</h2>
+      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}</p>
+      ${factsHTML(t)}
+      <p><a href="${esc(t.u)}" target="_blank" rel="noopener">公式の設備ページを見る ↗</a></p>
+      <div class="row"><button class="primary" id="restart">もう一度遊ぶ</button></div>
+    </div>`;
+        bindTools();
+      }
+
+      function renderGiveUp() {
+        stage.innerHTML = `
+    <div class="fade">
+      <p class="q">まいりました…。どの映画館でしたか？</p>
+      <input class="search" id="search" placeholder="館名で検索（例：新宿、梅田）" autocomplete="off">
+      <div class="search-results" id="results"></div>
+      <div class="tools">
+        <button class="link" id="undo" ${state.history.length ? '' : 'disabled'}>← 最後の回答を取り消す</button>
+        <button class="link" id="restart">最初から</button>
+      </div>
+    </div>`;
+        const input = document.getElementById('search'), res = document.getElementById('results');
+        const show = () => {
+          const s = input.value.trim();
+          const hits = s ? T.map((t, i) => ({ t, i })).filter(x => (x.t.n + x.t.p + x.t.c).includes(s)).slice(0, 30) : [];
+          res.innerHTML = hits.map(x => `<button data-i="${x.i}">${esc(x.t.n)}　<small style="color:var(--sub)">${esc(x.t.p)}</small></button>`).join('');
+          res.querySelectorAll('[data-i]').forEach(b => b.onclick = () => renderReveal(+b.dataset.i));
+        };
+        input.oninput = show; input.focus();
+        bindTools();
+      }
+
+      function renderReveal(i) {
+        const t = T[i];
+        // どの回答がデータと食い違っていたかを表示
+        const diffs = state.history.map(h => {
+          const v = Q[h.q].test(t);
+          if (v === null || h.a === 0) return null;
+          if ((v ? 1 : -1) * h.a < 0) return `「${Q[h.q].text}」→ あなた: ${ANSWERS_FULL.find(a => a.v === h.a).label}／データ: ${v ? 'はい' : 'いいえ'}`;
+          return null;
+        }).filter(Boolean);
+        stage.innerHTML = `
+    <div class="fade guess">
+      <p class="label">正解は…</p>
+      <h2>${esc(t.n)}</h2>
+      <p class="chain">${esc(t.c)} ／ ${esc(t.p)}</p>
+      ${factsHTML(t)}
+      ${diffs.length ? `<p class="label">データと食い違った回答：</p><ul style="color:var(--sub);font-size:13px;padding-left:18px">${diffs.map(d => `<li>${esc(d)}</li>`).join('')}</ul>` : '<p class="label">回答とデータに矛盾はありませんでした。くやしい！</p>'}
+      <div class="row"><button class="primary" id="restart">もう一度遊ぶ</button></div>
+    </div>`;
+        bindTools();
+      }
+
+      function bindTools() {
+        const u = document.getElementById('undo'); if (u) u.onclick = undo;
+        const r = document.getElementById('restart'); if (r) r.onclick = reset;
+      }
+
+      const fastOpt = document.getElementById('fast');
+      fastOpt.checked = fast;
+      fastOpt.onchange = () => { fast = fastOpt.checked; ANSWERS = fast ? ANSWERS_FAST : ANSWERS_FULL; fastOpt.blur(); reset(); };
+      const opt = document.getElementById('nochain');
+      opt.checked = noChainPref;
+      opt.onchange = () => { noChainPref = opt.checked; opt.blur(); reset(); };
+
+      document.addEventListener('keydown', e => {
+        if (state.mode !== 'ask' || e.target.type === 'text' || e.target.id === 'search') return;
+        const a = ANSWERS.find(a => a.key === e.key);
+        if (a) answer(a.v);
+        if (e.key === 'Backspace') undo();
+      });
+
+      reset();
+    })();
+  </script>
+</body>
+
+</html>
