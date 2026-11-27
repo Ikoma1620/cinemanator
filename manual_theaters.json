@@ -2167,6 +2167,37 @@
      "formats": []
     }
    ]
+  },
+  {
+   "chain": "T・ジョイ",
+   "theaterName": "T・ジョイ稚内",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10302/1034/",
+   "source": "映画.com",
+   "note": "稚内駅直結のキタカラ内。最北シネマとT・ジョイの共同事業で、T・ジョイ公式サイトに館ページがないため映画.comの座席数",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 65,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 97,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
   }
  ],
  "fixes": {
