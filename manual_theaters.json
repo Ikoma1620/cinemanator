@@ -80,7 +80,7 @@
    "prefecture": "埼玉県",
    "url": "https://www.unitedcinemas.jp/wakaba/about_facilities.html",
    "source": "公式",
-   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加 スクリーン5の4DXは公式の劇場案内（4DXのバナー）と映画.com（スクリーン5 4DX上映対応 112座席）より",
    "screens": [
     {
      "name": "スクリーン1",
@@ -118,6 +118,7 @@
      "width": 11.7,
      "wheelchair": null,
      "formats": [
+      "4DX",
       "HDCS"
      ]
     },
@@ -285,7 +286,7 @@
    "prefecture": "神奈川県",
    "url": "https://www.unitedcinemas.jp/hiratsuka/about_facilities.html",
    "source": "公式",
-   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加",
+   "note": "クローラーの館一覧から漏れていたため公式の劇場案内ページから追加 4DXは公式の劇場案内（4DXのバナー）より。どのスクリーンかは公式・映画.comとも記載なし",
    "screens": [
     {
      "name": "スクリーン1",
@@ -343,6 +344,9 @@
      "wheelchair": null,
      "formats": []
     }
+   ],
+   "extraFormats": [
+    "4DX"
    ]
   },
   {
