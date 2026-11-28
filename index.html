@@ -26,6 +26,28 @@
   <meta name="twitter:image" content="https://ikoma1620.github.io/cinemanator/ogp.png?v=2">
   <meta name="twitter:image:alt" content="シネマネーター：思い浮かべた映画館を、質問だけで当てます">
   <link rel="canonical" href="https://ikoma1620.github.io/cinemanator/">
+  <!-- Google アナリティクス（GA4）。どの映画館が選ばれているかの集計用。
+       送るのは館名・チェーン・都道府県・モード・質問数・結果だけで、検索欄に入力した文字などは送らない。
+       公開サイト以外（ローカルなど）では ?ga_debug=1 を付けたときだけ動く -->
+  <script>
+    (function () {
+      var ID = 'G-E2MVYB90G4';
+      var prod = location.hostname === 'ikoma1620.github.io';
+      var debug = /[?&]ga_debug=1/.test(location.search);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      if (!prod && !debug) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', ID, {
+        allow_google_signals: false,              // Google シグナル（ログイン中の Google アカウントとの関連付け）を使わない
+        allow_ad_personalization_signals: false,  // 広告のパーソナライズに使わない
+        debug_mode: debug || undefined,
+      });
+    })();
+  </script>
   <style>
     :root {
       --bg: #121014;
@@ -175,6 +197,8 @@
     .xbtn { background: #000; color: #fff; border: 1px solid #444; border-radius: 999px; padding: 10px 20px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; text-decoration: none }
     .xbtn:hover { background: #1a1a1a; border-color: #777 }
     .xlogo { font-size: 18px; line-height: 1 }
+    .privacy { color: var(--sub); font-size: 11px; line-height: 1.7; opacity: .8; margin-top: 10px }
+    .privacy a { color: var(--sub) }
     .hint { color: var(--sub); font-size: 14px; margin: 0 0 12px }
     a.official { display: block; text-align: center; padding: 13px 16px; margin: 0 0 18px; border: 1.5px solid var(--accent); border-radius: 12px; color: var(--accent); font-weight: 700; text-decoration: none }
     a.official:hover { background: #2a2218 }
@@ -210,6 +234,9 @@
     <section class="stage" id="stage" aria-live="polite"></section>
     <footer>
       <p id="foot"></p>
+      <p class="privacy">このサイトはアクセス解析のため Google アナリティクスを使っています。Cookie を使って匿名の利用状況（どの映画館が選ばれたか、など）を集めますが、名前などの個人を特定する情報は集めません。
+        <a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Google によるデータの使用について</a>／
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener">無効にする方法</a></p>
     </footer>
   </main>
 
@@ -282,6 +309,8 @@
       // 細かい数値：数字しか違わない館どうしを分けるための最後の手段
       for (let n = 2; n <= 18; n++) if (![6, 8, 10, 12, 14].includes(n)) add('scD:' + n, 'fine', 'D', `スクリーンは${n}以上ありますか？`, t => over(t.sc, n));
       // 小さな館どうしも分けられるよう、低い値から用意する（B・C の質問と同じ値は除く）
+      // 小さな館用：総座席数 30〜300 席は10席刻み
+      for (let n = 30; n < 300; n += 10) if (n % 100) add('stD:' + n, 'fine', 'D', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
       for (let n = 100; n <= 3000; n += 100) if (![1000, 1500, 2000, 2500].includes(n)) add('stD:' + n, 'fine', 'D', `総座席数は${n.toLocaleString()}席以上ですか？`, t => over(t.st, n));
       for (let n = 50; n <= 550; n += 25) if (![300, 400, 500].includes(n)) add('mxD:' + n, 'fine', 'D', `いちばん大きいスクリーンは${n}席以上ですか？`, t => over(t.mx, n));
       for (let n = 6; n <= 20; n += 1) if (n !== 18 && n !== 20) add('wD:' + n, 'fine', 'D', `いちばん大きいスクリーンの横幅は${n}m以上ですか？`, t => over(t.w, n));
@@ -504,6 +533,16 @@
       // 設備はこの画面には出さず、公式の設備ページを別タブで開いて確認してもらう
       const officialLink = (t, label) => `<a class="official" href="${esc(t.u)}" target="_blank" rel="noopener">${label} ↗</a>`;
 
+      // ---------- アクセス解析（GA4）----------
+      // 個人情報は送らない：送るのは館名などデータに載っている情報と、モード・質問数・結果だけ
+      function track(name, t, extra) {
+        try {
+          const p = Object.assign({ mode: mode || 'none' }, extra || {});
+          if (t) Object.assign(p, { theater_name: t.n, theater_chain: t.c, theater_pref: t.p });
+          window.gtag && window.gtag('event', name, p);
+        } catch (e) { /* 解析の失敗でゲームを止めない */ }
+      }
+
       // ---------- X（Twitter）でシェア ----------
       // ボタンは普通のリンク（<a target="_blank">）にする。
       // クリック後に非同期処理をはさむとポップアップがブロックされ「2回押さないと開かない」ことがあるため、
@@ -538,7 +577,7 @@
           <ul><li>「たぶんそう」なども選べる5段階</li><li>答え間違いがあっても大丈夫</li><li>座席数・都道府県は、絞りきれないときだけ聞きます</li></ul></button>
       </div>
     </div>`;
-        stage.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { setMode(b.dataset.m); reset(); });
+        stage.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { setMode(b.dataset.m); track('mode_select'); reset(); });
       }
 
       function renderModebar() {
@@ -550,6 +589,7 @@
 
       function renderDetail(i) {
         const t = T[i];
+        track('theater_lookup', t);   // 検索から設備を見た館
         state.mode = 'detail';
         stage.innerHTML = `
     <div class="fade guess">
@@ -601,6 +641,7 @@
 
       function renderWin(i) {
         const t = T[i];
+        track('game_result', t, { result: 'guessed', questions: state.history.length, guesses: state.guesses + 1 });
         stage.innerHTML = `
     <div class="fade guess">
       <p class="label">やった！ ${state.history.length}問で当てました 🎬</p>
@@ -638,6 +679,7 @@
 
       function renderReveal(i) {
         const t = T[i];
+        track('game_result', t, { result: 'missed', questions: state.history.length, guesses: state.guesses });
         // どの回答がデータと食い違っていたかを表示
         const diffs = state.history.map(h => {
           const v = Q[h.q].test(t);

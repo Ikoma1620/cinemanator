@@ -2198,6 +2198,3796 @@
      "formats": []
     }
    ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シアターキノ",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10101/1010/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "A館",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "B館",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "新千歳空港シアター",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10304/1035/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 229,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 71,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 71,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ・トーラス",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10401/1027/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "大黒座",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10402/1028/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 48,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ太陽函館",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10404/1023/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 90,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 90,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマアイリス",
+   "prefecture": "北海道",
+   "url": "https://eiga.com/theater/1/10404/1024/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 71,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマディクト",
+   "prefecture": "青森県",
+   "url": "https://eiga.com/theater/2/20101/2002/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "シネマディクトルージュ",
+     "seats": 150,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シネマディクトノアール",
+     "seats": 55,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "盛岡ルミエール",
+   "prefecture": "岩手県",
+   "url": "https://eiga.com/theater/3/30101/2012/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 78,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 69,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "中央映画劇場",
+   "prefecture": "岩手県",
+   "url": "https://eiga.com/theater/3/30101/2013/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 173,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 74,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "一関シネプラザ",
+   "prefecture": "岩手県",
+   "url": "https://eiga.com/theater/3/39901/2018/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 70,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "AL☆VEシアター supported by 109シネマズ",
+   "prefecture": "秋田県",
+   "url": "https://eiga.com/theater/5/50101/2063/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "シアター1",
+     "seats": 127,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シアター2",
+     "seats": 127,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シアター3",
+     "seats": 127,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "イオンファミリーシアター能代",
+   "prefecture": "秋田県",
+   "url": "https://eiga.com/theater/5/50201/2037/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "鶴岡まちなかキネマ",
+   "prefecture": "山形県",
+   "url": "https://eiga.com/theater/6/60701/2065/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン3",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "まちポレいわき",
+   "prefecture": "福島県",
+   "url": "https://eiga.com/theater/7/70301/2049/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 51,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "土浦セントラルシネマズ",
+   "prefecture": "茨城県",
+   "url": "https://eiga.com/theater/8/80201/3209/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 300,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 280,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 210,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 170,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ポレポレホール",
+   "prefecture": "茨城県",
+   "url": "https://eiga.com/theater/8/80601/3214/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 94,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 76,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマサンライズ",
+   "prefecture": "茨城県",
+   "url": "https://eiga.com/theater/8/81201/3306/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 350,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "宇都宮ヒカリ座",
+   "prefecture": "栃木県",
+   "url": "https://eiga.com/theater/9/90101/3221/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 258,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 72,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマテークたかさき",
+   "prefecture": "群馬県",
+   "url": "https://eiga.com/theater/10/100201/3232/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 58,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "OttO",
+   "prefecture": "埼玉県",
+   "url": "https://eiga.com/theater/11/110105/3328/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 53,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "深谷シネマ",
+   "prefecture": "埼玉県",
+   "url": "https://eiga.com/theater/11/110207/3193/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 57,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "川越スカラ座",
+   "prefecture": "埼玉県",
+   "url": "https://eiga.com/theater/11/110309/3202/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 124,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジャパンパビリオン ホールB",
+   "prefecture": "埼玉県",
+   "url": "https://eiga.com/theater/11/110312/3312/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 207,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "イオンスペースシネマ野田",
+   "prefecture": "千葉県",
+   "url": "https://eiga.com/theater/12/120207/3171/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 208,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 135,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "キネマ旬報シアター",
+   "prefecture": "千葉県",
+   "url": "https://eiga.com/theater/12/120208/3251/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 160,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 148,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 136,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "国立映画アーカイブ",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130101/3300/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "大ホール",
+     "seats": 310,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "小ホール",
+     "seats": 151,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "LumiArc GINZA",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130101/3339/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 29,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ヒューマントラストシネマ有楽町",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130102/3004/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 161,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 62,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "角川シネマ有楽町",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130102/3248/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 237,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "K's cinema",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130201/3018/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 84,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマート新宿",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130201/3020/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 333,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 51,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "テアトル新宿",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130201/3022/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 218,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "新宿武蔵野館",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130201/3026/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 128,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 83,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema新宿",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130201/3322/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 294,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 53,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シアター・イメージフォーラム",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3028/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 98,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ヒューマントラストシネマ渋谷",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3042/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 200,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 173,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 60,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ユーロスペース",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3044/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 92,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 145,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "SPACE PART 3 by PARCO",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3283/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 162,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "渋谷パルコ8F ホワイト シネクイント",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3295/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマヴェーラ渋谷",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3298/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 142,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Bunkamuraル・シネマ 渋谷宮下",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130301/3321/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "7F",
+     "seats": 268,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "9F",
+     "seats": 187,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ・ロサ",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130501/3052/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 193,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 177,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "新文芸坐",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130501/3055/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 264,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "下高井戸シネマ",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130606/3064/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 126,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "東京都写真美術館",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130608/3067/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "目黒シネマ",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130609/3069/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 88,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ラピュタ阿佐ケ谷",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130610/3070/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 48,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Morc阿佐ヶ谷",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130610/3315/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "ウエ",
+     "seats": 70,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シタ",
+     "seats": 49,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "早稲田松竹",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130611/3071/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 153,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ポレポレ東中野",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130612/3292/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "下北沢トリウッド",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130613/3277/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 45,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シモキタ-エキマエ-シネマ K2",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130613/3317/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 69,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "アテネ・フランセ文化センター",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130614/3299/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 130,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマハウス大塚",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130616/3311/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 56,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "神保町シアター",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130710/3302/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 99,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマリス",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130710/3331/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "シアター1",
+     "seats": 67,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シアター2",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "キネカ大森",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130713/3095/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 128,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 68,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 39,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "船堀シネパル",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130714/3068/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 118,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ ブルースタジオ",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130715/3301/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 293,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "CINEMA Chupki TABATA",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130717/3272/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 20,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Stranger",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130718/3319/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 49,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema 立川髙島屋S.C.館",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130802/3290/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 89,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 27,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "吉祥寺オデヲン",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130809/3109/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "吉祥寺オデヲン5F",
+     "seats": 246,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "吉祥寺オデヲン3F",
+     "seats": 251,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "吉祥寺オデヲン2F",
+     "seats": 224,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "CINEMA NEKO",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130812/3314/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマノヴェチェント",
+   "prefecture": "東京都",
+   "url": "https://eiga.com/theater/13/130814/3266/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 28,
+     "width": null,
+     "wheelchair": 1,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema 横浜みなとみらい",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140102/3289/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 55,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 111,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 111,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "港南台シネサロン",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140106/3125/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 103,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 103,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "横浜シネマリン",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140107/3130/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 102,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ・ジャック&ベティ",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140108/3247/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "ジャック",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "ベティ",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "川崎市アートセンター",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140202/3138/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "アルテリオ映像館",
+     "seats": 111,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "鎌倉市川喜多映画記念館",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140305/3278/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "映像資料室",
+     "seats": 51,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "小田原シネマ館",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140401/3325/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "あつぎのえいがかんkiki",
+   "prefecture": "神奈川県",
+   "url": "https://eiga.com/theater/14/140406/3287/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 152,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 56,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 110,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "新潟・市民映画館 シネ・ウインド",
+   "prefecture": "新潟県",
+   "url": "https://eiga.com/theater/15/150101/4006/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネモンド",
+   "prefecture": "石川県",
+   "url": "https://eiga.com/theater/17/170101/4024/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 90,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "福井メトロ劇場",
+   "prefecture": "福井県",
+   "url": "https://eiga.com/theater/18/180101/4026/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 117,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "敦賀アレックスシネマ",
+   "prefecture": "福井県",
+   "url": "https://eiga.com/theater/18/180201/4030/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 172,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 272,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 99,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 155,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シアターセントラルBe館",
+   "prefecture": "山梨県",
+   "url": "https://eiga.com/theater/19/190101/4037/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "長野相生座・ロキシー",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200101/4042/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 264,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 72,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "長野千石劇場",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200101/4045/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 200,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "上田映劇",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200301/4049/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 270,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "トラゥム・ライゼ",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200301/4184/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 89,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "トキワ劇場",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200401/4050/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 90,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "センゲキシネマズ",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200401/4051/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 217,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 115,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 60,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シネマアウル",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "東座",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/200701/4054/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "1号館",
+     "seats": 168,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "2号館",
+     "seats": 78,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "伊那旭座",
+   "prefecture": "長野県",
+   "url": "https://eiga.com/theater/20/201101/4062/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 352,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 204,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "金星シネマ",
+   "prefecture": "静岡県",
+   "url": "https://eiga.com/theater/22/221401/4181/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 16,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマスコーレ",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/230102/4112/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 51,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ナゴヤキネマ・ノイ",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/230106/4180/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 40,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "伏見ミリオン座",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/230107/4116/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 184,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 47,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 109,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 74,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "センチュリーシネマ",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/230107/4117/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 154,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 45,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "三越映画劇場",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/230109/4107/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 68,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "東海市創造の杜交流館",
+   "prefecture": "愛知県",
+   "url": "https://eiga.com/theater/23/232201/4185/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "映像ホール1",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "彦根ビバシティシネマ",
+   "prefecture": "滋賀県",
+   "url": "https://eiga.com/theater/25/250201/5004/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 106,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 110,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 131,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 208,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "京都シネマ",
+   "prefecture": "京都府",
+   "url": "https://eiga.com/theater/26/260104/5014/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 89,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 61,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "出町座",
+   "prefecture": "京都府",
+   "url": "https://eiga.com/theater/26/260106/5125/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "BF",
+     "seats": 42,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "2F",
+     "seats": 48,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "アップリンク京都",
+   "prefecture": "京都府",
+   "url": "https://eiga.com/theater/26/260107/5127/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 73,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 59,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 44,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 38,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "福知山シネマ",
+   "prefecture": "京都府",
+   "url": "https://eiga.com/theater/26/260201/5017/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1(本館)",
+     "seats": 134,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2(本館)",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3(別館)",
+     "seats": 60,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "舞鶴八千代館",
+   "prefecture": "京都府",
+   "url": "https://eiga.com/theater/26/260301/5018/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 156,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 72,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 77,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "テアトル梅田",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270102/5034/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 93,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 111,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 111,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "プラネットプラスワン",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270102/5129/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 25,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "扇町キネマ",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270102/5223/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 43,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シアターエミュ",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270103/5228/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 20,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema 心斎橋",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270105/5131/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 104,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 103,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネ・ヌーヴォ",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270106/5042/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 69,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネ・ヌーヴォX",
+   "prefecture": "大阪府",
+   "url": "https://eiga.com/theater/27/270106/5220/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 24,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema 神戸国際",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280102/5225/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 152,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 99,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 145,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "神戸映画資料館",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280105/5221/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 38,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Cinema KOBE",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280106/5115/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 121,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 79,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "神戸アートビレッジセンター",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280106/5116/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 94,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネ・リーブル神戸",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280107/5077/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 83,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 81,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "元町映画館",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280107/5119/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 66,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "塚口サンサン劇場",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280202/5083/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 47,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 117,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 165,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 155,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "カナートホール",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280302/5073/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 194,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "豊岡劇場",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280601/5097/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 174,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 50,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネ・ピピア",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/280701/5092/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com。映画.comでは1・2が別掲載だが同じ館なので1館にまとめた",
+   "screens": [
+    {
+     "name": "シネ・ピピア1",
+     "seats": 50,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "シネ・ピピア2",
+     "seats": 50,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "プラット赤穂シネマ",
+   "prefecture": "兵庫県",
+   "url": "https://eiga.com/theater/28/281001/5095/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 125,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 125,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 95,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ203",
+   "prefecture": "和歌山県",
+   "url": "https://eiga.com/theater/30/300101/5155/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 20,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジストシネマ御坊",
+   "prefecture": "和歌山県",
+   "url": "https://eiga.com/theater/30/300201/5108/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 208,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 162,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジストシネマ田辺",
+   "prefecture": "和歌山県",
+   "url": "https://eiga.com/theater/30/300301/5109/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 159,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 95,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 79,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ジストシネマ南紀",
+   "prefecture": "和歌山県",
+   "url": "https://eiga.com/theater/30/300401/5110/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 190,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 117,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 81,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 81,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "鳥取シネマ",
+   "prefecture": "鳥取県",
+   "url": "https://eiga.com/theater/31/310101/6001/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 208,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 208,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "倉吉シネマエポック",
+   "prefecture": "鳥取県",
+   "url": "https://eiga.com/theater/31/310201/6002/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 146,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "jig theater",
+   "prefecture": "鳥取県",
+   "url": "https://eiga.com/theater/31/310401/6006/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 25,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Shimane Cinema ONOZAWA",
+   "prefecture": "島根県",
+   "url": "https://eiga.com/theater/32/320301/6080/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 200,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "岡山メルパ",
+   "prefecture": "岡山県",
+   "url": "https://eiga.com/theater/33/330101/6008/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 200,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ・クレール丸の内１・２",
+   "prefecture": "岡山県",
+   "url": "https://eiga.com/theater/33/330101/6009/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 110,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 60,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "夢売劇場 サロンシネマ1・2",
+   "prefecture": "広島県",
+   "url": "https://eiga.com/theater/34/340101/6025/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 124,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 75,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "横川シネマ",
+   "prefecture": "広島県",
+   "url": "https://eiga.com/theater/34/340101/6071/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 70,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "八丁座 壱･弐",
+   "prefecture": "広島県",
+   "url": "https://eiga.com/theater/34/340101/6072/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "八丁座・壱",
+     "seats": 166,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "八丁座・弐",
+     "seats": 69,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "呉ポポロシアター",
+   "prefecture": "広島県",
+   "url": "https://eiga.com/theater/34/340301/6036/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 200,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 150,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ尾道",
+   "prefecture": "広島県",
+   "url": "https://eiga.com/theater/34/340401/6038/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 112,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "萩ツインシネマ",
+   "prefecture": "山口県",
+   "url": "https://eiga.com/theater/35/350401/6045/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 35,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ufotable CINEMA",
+   "prefecture": "徳島県",
+   "url": "https://eiga.com/theater/36/360201/7084/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 71,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 29,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ホール・ソレイユ",
+   "prefecture": "香川県",
+   "url": "https://eiga.com/theater/37/370101/6069/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 90,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマルナティック",
+   "prefecture": "愛媛県",
+   "url": "https://eiga.com/theater/38/380101/6058/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 160,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "高知あたご劇場",
+   "prefecture": "高知県",
+   "url": "https://eiga.com/theater/39/390101/6065/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 136,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "キネマミュージアム",
+   "prefecture": "高知県",
+   "url": "https://eiga.com/theater/39/390101/6081/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 64,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "KBCシネマ",
+   "prefecture": "福岡県",
+   "url": "https://eiga.com/theater/40/400101/7010/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 108,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "kino cinema 天神",
+   "prefecture": "福岡県",
+   "url": "https://eiga.com/theater/40/400101/7103/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "小倉昭和館",
+   "prefecture": "福岡県",
+   "url": "https://eiga.com/theater/40/400201/7015/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 134,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "大川シネマホール",
+   "prefecture": "福岡県",
+   "url": "https://eiga.com/theater/40/401201/7092/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 370,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シアター・シエマ",
+   "prefecture": "佐賀県",
+   "url": "https://eiga.com/theater/41/410101/7028/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 72,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "THEATER ENYA",
+   "prefecture": "佐賀県",
+   "url": "https://eiga.com/theater/41/410201/7100/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 62,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "長崎セントラル劇場",
+   "prefecture": "長崎県",
+   "url": "https://eiga.com/theater/42/420101/7033/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 94,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "Denkikan",
+   "prefecture": "熊本県",
+   "url": "https://eiga.com/theater/43/430101/7041/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン2",
+     "seats": 96,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン5",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "本渡第一映劇",
+   "prefecture": "熊本県",
+   "url": "https://eiga.com/theater/43/430401/7046/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 110,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "キネマランタン",
+   "prefecture": "熊本県",
+   "url": "https://eiga.com/theater/43/430901/7111/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 20,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ5",
+   "prefecture": "大分県",
+   "url": "https://eiga.com/theater/44/440101/7050/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 74,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネマ5 bis",
+   "prefecture": "大分県",
+   "url": "https://eiga.com/theater/44/440101/7054/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 168,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "別府ブルーバード劇場",
+   "prefecture": "大分県",
+   "url": "https://eiga.com/theater/44/440201/7053/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "日田リベルテ",
+   "prefecture": "大分県",
+   "url": "https://eiga.com/theater/44/440401/7078/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 63,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "宮崎キネマ館",
+   "prefecture": "宮崎県",
+   "url": "https://eiga.com/theater/45/450101/7058/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 38,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 20,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン4",
+     "seats": 16,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "シネポート",
+   "prefecture": "宮崎県",
+   "url": "https://eiga.com/theater/45/450201/7060/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 80,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 53,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "延岡シネマ",
+   "prefecture": "宮崎県",
+   "url": "https://eiga.com/theater/45/450301/7061/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 86,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 140,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ガーデンズシネマ",
+   "prefecture": "鹿児島県",
+   "url": "https://eiga.com/theater/46/460101/7079/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 39,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "リナシアター",
+   "prefecture": "鹿児島県",
+   "url": "https://eiga.com/theater/46/460201/7065/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 68,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "桜坂劇場",
+   "prefecture": "沖縄県",
+   "url": "https://eiga.com/theater/47/470101/7070/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン1",
+     "seats": 300,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン2",
+     "seats": 100,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    },
+    {
+     "name": "スクリーン3",
+     "seats": 85,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "ファミンチュシアター",
+   "prefecture": "沖縄県",
+   "url": "https://eiga.com/theater/47/470101/7110/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 27,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
+  },
+  {
+   "chain": "独立系",
+   "theaterName": "南の島パニパニシネマ",
+   "prefecture": "沖縄県",
+   "url": "https://eiga.com/theater/47/470401/7073/",
+   "source": "映画.com",
+   "mini": true,
+   "note": "ミニシアター（試験的に追加）。座席数は映画.com",
+   "screens": [
+    {
+     "name": "スクリーン",
+     "seats": 120,
+     "width": null,
+     "wheelchair": null,
+     "formats": []
+    }
+   ]
   }
  ],
  "fixes": {
